@@ -240,7 +240,7 @@ footer .wrap{display:grid;gap:8px}
     <div class="wrap vgrid">
       <div class="vphone">
         <video id="vid" src="media/verdio-30s-es.mp4" poster="media/verdio-poster.jpg" muted playsinline loop preload="metadata" controls
-          aria-label="Video de 30 segundos: cómo Verdio evalúa una oferta"></video>
+          aria-label="Video de 30 segundos: cómo Verdio evalúa una oferta" data-es="media/verdio-30s-es.mp4" data-en="media/verdio-30s-en.mp4" data-pes="media/verdio-poster.jpg" data-pen="media/verdio-poster-en.jpg"></video>
         <button type="button" class="snd" id="snd" aria-pressed="false"><span data-l="es">🔊 Activar sonido</span><span data-l="en">🔊 Turn sound on</span></button>
       </div>
       <div class="vtext">
@@ -254,7 +254,7 @@ footer .wrap{display:grid;gap:8px}
           <li><button type="button" data-t="15" id="ch2"><span class="tc">0:15</span><span data-l="es">Rojo, amarillo, verde</span><span data-l="en">Red, yellow, green</span></button></li>
           <li><button type="button" data-t="21" id="ch3"><span class="tc">0:21</span><span data-l="es">Todo lo que cuenta</span><span data-l="en">Everything it counts</span></button></li>
         </ol>
-        <p class="small" data-l="en">Video in Spanish. Example numbers.</p>
+        <p class="small" data-l="en">Example numbers.</p>
         <p class="small" data-l="es">Números de ejemplo.</p>
         <div><a class="btn" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a></div>
       </div>
@@ -442,6 +442,15 @@ footer .wrap{display:grid;gap:8px}
     document.getElementById('bES').setAttribute('aria-pressed',l==='es');
     document.getElementById('bEN').setAttribute('aria-pressed',l==='en');
     try{localStorage.setItem('verdio-lang',l)}catch(e){}
+    // video en el idioma elegido (mismo momento; sigue sonando si estaba sonando)
+    var v=document.getElementById('vid');
+    if(v&&v.dataset[l]&&v.getAttribute('src')!==v.dataset[l]){
+      var t=v.currentTime||0, playing=!v.paused;
+      v.setAttribute('src',v.dataset[l]); v.setAttribute('poster',v.dataset['p'+l]);
+      v.addEventListener('loadedmetadata',function once(){v.removeEventListener('loadedmetadata',once);try{v.currentTime=t;}catch(e){} if(playing){var p=v.play();if(p&&p.catch)p.catch(function(){});}});
+      v.load();
+      v.setAttribute('aria-label', l==='en' ? '30-second video: how Verdio rates an offer' : 'Video de 30 segundos: cómo Verdio evalúa una oferta');
+    }
     render(cur);
   }
   var saved=null; try{saved=localStorage.getItem('verdio-lang')}catch(e){}

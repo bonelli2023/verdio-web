@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Verdio Driver</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Verdio lee tus ofertas de DoorDash, Uber Eats y UberX y te dice en un segundo si valen la pena, contando el regreso.">
+<meta name="description" content="Verdio lee tus ofertas de DoorDash, Uber Eats, UberX y Lyft y te dice en un segundo si valen la pena, contando el regreso.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://verdiodriver.com/">
+<meta property="og:title" content="Verdio · ¿Vale la pena esta oferta? Te lo dice en un segundo">
+<meta property="og:description" content="Lo que paga no es lo que te queda. Verdio cuenta el regreso. Prueba gratis 14 días · Android.">
+<meta property="og:image" content="https://verdiodriver.com/media/verdio-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:video" content="https://verdiodriver.com/media/verdio-30s-es.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://verdiodriver.com/media/verdio-og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -133,6 +144,21 @@ legend{font-weight:600;font-size:.92rem;margin-bottom:6px}
 .ok{border-radius:12px;padding:14px;background:color-mix(in srgb,var(--brand) 14%,transparent);font-weight:600}
 @media (max-width:820px){.signup{grid-template-columns:1fr}}
 
+/* video */
+.video{padding-block:64px}
+.vgrid{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;align-items:center}
+.vgrid > div{min-width:0}
+.vphone{background:var(--card-bg);border-radius:34px;padding:12px;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);max-width:380px;width:100%;justify-self:center}
+.vphone video{display:block;width:100%;aspect-ratio:9/16;border-radius:24px;background:#000;max-width:100%}
+.vtext{display:grid;gap:16px;align-content:start}
+.vlead{color:var(--muted);font-size:1.12rem;max-width:44ch}
+.vlead b{color:var(--stop)}
+.chapters{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-width:440px}
+.chapters button{width:100%;display:flex;gap:14px;align-items:center;text-align:left;font:600 1rem var(--body);color:var(--ink);
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.chapters button[aria-current="true"]{border-color:var(--brand);box-shadow:inset 4px 0 0 var(--brand)}
+.chapters .tc{font:700 .85rem var(--mono);color:var(--gold);min-width:3.2em}
+@media (max-width:820px){.vgrid{grid-template-columns:1fr;gap:32px}}
 /* guide + prices */
 .guide{margin:0;padding:0;list-style:none;counter-reset:g;display:grid;gap:14px}
 .guide li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 18px 64px;position:relative;display:grid;gap:4px}
@@ -174,8 +200,8 @@ footer .wrap{display:grid;gap:8px}
 <main id="top">
   <div class="wrap hero">
     <div>
-      <p class="eyebrow" data-l="es">Para conductores de DoorDash, Uber Eats y UberX</p>
-      <p class="eyebrow" data-l="en">For DoorDash, Uber Eats and UberX drivers</p>
+      <p class="eyebrow" data-l="es">Para conductores de DoorDash, Uber Eats, UberX y Lyft</p>
+      <p class="eyebrow" data-l="en">For DoorDash, Uber Eats, UberX and Lyft drivers</p>
       <h1 style="margin-top:14px"><span data-l="es">¿Vale la pena esta oferta? Verdio te lo dice en un segundo.</span><span data-l="en">Is this offer worth it? Verdio tells you in one second.</span></h1>
       <p class="lead" data-l="es">Lee cada oferta en tu pantalla y te muestra cuánto ganas de verdad, contando las millas de regreso. Verde, amarillo o rojo. Tú decides con números claros.</p>
       <p class="lead" data-l="en">It reads each offer on your screen and shows what you really earn, counting the miles back. Green, yellow or red. You decide with clear numbers.</p>
@@ -185,7 +211,7 @@ footer .wrap{display:grid;gap:8px}
       </div>
       <div class="apps">
         <span class="chip">DoorDash</span><span class="chip">Uber Eats</span><span class="chip">UberX</span>
-        <span class="chip soon">Lyft <span data-l="es">· pronto</span><span data-l="en">· soon</span></span>
+        <span class="chip">Lyft</span>
         <span class="chip">Android</span>
       </div>
     </div>
@@ -206,6 +232,30 @@ footer .wrap{display:grid;gap:8px}
       <p class="note" data-l="en">Example offers using a cost of $0.35 per mile. You set your own costs.</p>
     </div>
   </div>
+
+  <section class="video" id="video">
+    <div class="wrap vgrid">
+      <div class="vphone">
+        <video id="vid" src="media/verdio-30s-es.mp4" poster="media/verdio-poster.jpg" muted playsinline loop preload="metadata" controls
+          aria-label="Video de 30 segundos: cómo Verdio evalúa una oferta"></video>
+      </div>
+      <div class="vtext">
+        <p class="eyebrow" data-l="es">Míralo en 30 segundos</p><p class="eyebrow" data-l="en">See it in 30 seconds</p>
+        <h2><span data-l="es">Lo que paga no es lo que te queda.</span><span data-l="en">What it pays isn't what you keep.</span></h2>
+        <p class="vlead" data-l="es">Una oferta de $8.00 parece buena. Con las millas para recoger y el regreso a tu zona, te deja <b>−$0.88</b>. Verdio lo calcula antes de que toques Aceptar.</p>
+        <p class="vlead" data-l="en">An $8.00 offer looks fine. Add the pickup miles and the drive back to your zone and you keep <b>−$0.88</b>. Verdio works it out before you tap Accept.</p>
+        <ol class="chapters">
+          <li><button type="button" data-t="0" id="ch0"><span class="tc">0:00</span><span data-l="es">Te llega una oferta</span><span data-l="en">An offer comes in</span></button></li>
+          <li><button type="button" data-t="8" id="ch1"><span class="tc">0:08</span><span data-l="es">La tarjeta de Verdio: neto real</span><span data-l="en">Verdio's card: real net</span></button></li>
+          <li><button type="button" data-t="15" id="ch2"><span class="tc">0:15</span><span data-l="es">Rojo, amarillo, verde</span><span data-l="en">Red, yellow, green</span></button></li>
+          <li><button type="button" data-t="21" id="ch3"><span class="tc">0:21</span><span data-l="es">Todo lo que cuenta</span><span data-l="en">Everything it counts</span></button></li>
+        </ol>
+        <p class="small" data-l="en">Video in Spanish. Example numbers.</p>
+        <p class="small" data-l="es">Números de ejemplo.</p>
+        <div><a class="btn" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a></div>
+      </div>
+    </div>
+  </section>
 
   <section class="alt">
     <div class="wrap">
@@ -427,6 +477,20 @@ footer .wrap{display:grid;gap:8px}
   }
   document.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){render(+b.dataset.ex)})});
   setLang(start);
+
+  // video: arranca solo (sin sonido) cuando se ve; los capítulos saltan al momento
+  var vid=document.getElementById('vid');
+  if(vid){
+    var chs=[].slice.call(document.querySelectorAll('.chapters button'));
+    chs.forEach(function(b){b.addEventListener('click',function(){try{vid.currentTime=+b.dataset.t;var p=vid.play();if(p&&p.catch)p.catch(function(){});}catch(e){}});});
+    vid.addEventListener('timeupdate',function(){var t=vid.currentTime,cur=0;chs.forEach(function(b,i){if(t>=+b.dataset.t)cur=i;});
+      chs.forEach(function(b,i){b.setAttribute('aria-current',i===cur);});});
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if('IntersectionObserver' in window && !reduce){
+      new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting){var p=vid.play();if(p&&p.catch)p.catch(function(){});}else vid.pause();});},{threshold:0.5}).observe(vid);
+    }
+  }
 
 })();
 </script>

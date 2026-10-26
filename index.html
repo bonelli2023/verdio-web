@@ -149,6 +149,9 @@ legend{font-weight:600;font-size:.92rem;margin-bottom:6px}
 .vgrid{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;align-items:center}
 .vgrid > div{min-width:0}
 .vphone{background:var(--card-bg);border-radius:34px;padding:12px;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);max-width:380px;width:100%;justify-self:center}
+.vphone{position:relative}
+.snd{position:absolute;left:50%;top:22px;transform:translateX(-50%);background:rgba(14,19,17,.82);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:10px 18px;font:700 .95rem var(--body);cursor:pointer;white-space:nowrap}
+.snd[hidden]{display:none}
 .vphone video{display:block;width:100%;aspect-ratio:9/16;border-radius:24px;background:#000;max-width:100%}
 .vtext{display:grid;gap:16px;align-content:start}
 .vlead{color:var(--muted);font-size:1.12rem;max-width:44ch}
@@ -238,6 +241,7 @@ footer .wrap{display:grid;gap:8px}
       <div class="vphone">
         <video id="vid" src="media/verdio-30s-es.mp4" poster="media/verdio-poster.jpg" muted playsinline loop preload="metadata" controls
           aria-label="Video de 30 segundos: cómo Verdio evalúa una oferta"></video>
+        <button type="button" class="snd" id="snd" aria-pressed="false"><span data-l="es">🔊 Activar sonido</span><span data-l="en">🔊 Turn sound on</span></button>
       </div>
       <div class="vtext">
         <p class="eyebrow" data-l="es">Míralo en 30 segundos</p><p class="eyebrow" data-l="en">See it in 30 seconds</p>
@@ -481,6 +485,10 @@ footer .wrap{display:grid;gap:8px}
   // video: arranca solo (sin sonido) cuando se ve; los capítulos saltan al momento
   var vid=document.getElementById('vid');
   if(vid){
+    var snd=document.getElementById('snd');
+    function syncSnd(){ if(snd) snd.hidden=!vid.muted; }
+    if(snd) snd.addEventListener('click',function(){ vid.muted=false; try{ vid.currentTime=0; var p=vid.play(); if(p&&p.catch)p.catch(function(){}); }catch(e){} syncSnd(); });
+    vid.addEventListener('volumechange',syncSnd);
     var chs=[].slice.call(document.querySelectorAll('.chapters button'));
     chs.forEach(function(b){b.addEventListener('click',function(){try{vid.currentTime=+b.dataset.t;var p=vid.play();if(p&&p.catch)p.catch(function(){});}catch(e){}});});
     vid.addEventListener('timeupdate',function(){var t=vid.currentTime,cur=0;chs.forEach(function(b,i){if(t>=+b.dataset.t)cur=i;});

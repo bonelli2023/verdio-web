@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://verdiodriver.com/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://verdiodriver.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://verdiodriver.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/"/>
+    <video:video>
+      <video:thumbnail_loc>https://verdiodriver.com/media/verdio-poster.jpg</video:thumbnail_loc>
+      <video:title>Verdio en 30 segundos: ¿vale la pena esta oferta?</video:title>
+      <video:description>Cómo Verdio lee una oferta de DoorDash, Uber Eats, UberX o Lyft y muestra el neto real contando el regreso.</video:description>
+      <video:content_loc>https://verdiodriver.com/media/verdio-30s-es.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://verdiodriver.com/?lang=en</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://verdiodriver.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://verdiodriver.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/"/>
+  </url>
+</urlset>

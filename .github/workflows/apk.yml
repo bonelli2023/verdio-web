@@ -1,0 +1,21 @@
+name: Publicar Verdio.apk
+# Cuando cambia apk/Verdio.apk, se publica en Releases como "latest".
+# El botón de la web apunta a: releases/latest/download/Verdio.apk
+on:
+  push:
+    paths: ['apk/Verdio.apk']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V=$(cat apk/VERSION 2>/dev/null || echo "")
+          gh release view verdio >/dev/null 2>&1 || gh release create verdio --latest --title "Verdio para Android" --notes "Descarga de Verdio."
+          gh release upload verdio apk/Verdio.apk --clobber
+          gh release edit verdio --latest --target "$GITHUB_SHA" --notes "Verdio $V para Android. Prueba gratis 14 días."

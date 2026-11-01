@@ -111,6 +111,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 /* signal strip */
 section{padding-block:72px}
 .alt{background:var(--surface);border-block:1px solid var(--line)}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px}
 .head{max-width:640px;display:grid;gap:14px;margin-bottom:40px}
 .head p{color:var(--muted);font-size:1.08rem}
 .signals{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
@@ -406,7 +407,7 @@ footer .wrap{display:grid;gap:8px}
         <div class="step"><h3><span data-l="es">Copia tu ID</span><span data-l="en">Copy your ID</span></h3>
           <p data-l="es">En Verdio toca <b>🔑 Activar Verdio</b>. Verás el ID de tu teléfono, por ejemplo <code>7F3A-91C2</code>.</p><p data-l="en">In Verdio tap <b>🔑 Activate Verdio</b>. You'll see your phone ID, for example <code>7F3A-91C2</code>.</p></div>
         <div class="step"><h3><span data-l="es">Paga y mándanos tu ID</span><span data-l="en">Pay and send your ID</span></h3>
-          <p data-l="es">Escríbenos a <b class="sel">hola@verdiodriver.com</b> con tu ID y el plan que quieres. Te respondemos con el enlace de pago.</p><p data-l="en">Email <b class="sel">hola@verdiodriver.com</b> with your ID and the plan you want. We'll reply with the payment link.</p></div>
+          <p data-l="es">Escríbenos a <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activar%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a> con tu ID y el plan que quieres. Te respondemos con el enlace de pago.</p><p data-l="en">Email <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activate%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a> with your ID and the plan you want. We'll reply with the payment link.</p></div>
         <div class="step"><h3><span data-l="es">Escribe tu código</span><span data-l="en">Enter your code</span></h3>
           <p data-l="es">Te enviamos un código como <code>VRD-4K7P-9XQ2-M8TD</code>. Lo escribes en Verdio y listo. Solo sirve en tu teléfono.</p><p data-l="en">We send you a code like <code>VRD-4K7P-9XQ2-M8TD</code>. Type it in Verdio and you're set. It only works on your phone.</p></div>
       </div>
@@ -448,13 +449,25 @@ footer .wrap{display:grid;gap:8px}
         <p data-l="en">For now we offer it directly from this page, which keeps the price lower. A Play Store version is on the way.</p></details>
     </div>
   </section>
+  <section id="contacto">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-l="es">Contacto</p><p class="eyebrow" data-l="en">Contact</p>
+        <h2><span data-l="es">Cuéntanos cómo te va con Verdio</span><span data-l="en">Tell us how Verdio works for you</span></h2>
+        <p data-l="es">¿Una oferta salió con el color equivocado? ¿Una idea para mejorarla? ¿Dudas para activarla? Escríbenos: leemos cada mensaje.</p>
+        <p data-l="en">An offer showed the wrong color? An idea to make it better? Questions about activating it? Write to us: we read every message.</p>
+      </div>
+      <div class="contact-row">
+        <a class="btn" href="mailto:hola@verdiodriver.com?subject=Verdio%20-%20comentarios"><span aria-hidden="true">✉</span> hola@verdiodriver.com</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Verdio · verdiodriver.com · <span class="sel">hola@verdiodriver.com</span></span>
+    <span>© 2026 Verdio · verdiodriver.com · <a class="sel" href="mailto:hola@verdiodriver.com" style="color:inherit">hola@verdiodriver.com</a></span>
     <span data-l="es">Verdio es una app independiente. No está afiliada ni respaldada por DoorDash, Uber ni Lyft.</span><span data-l="en">Verdio is an independent app. It is not affiliated with or endorsed by DoorDash, Uber or Lyft.</span>
-    <span data-l="en">Verdio is an independent app. It is not affiliated with or endorsed by DoorDash, Uber or Lyft.</span>
   </div>
 </footer>
 

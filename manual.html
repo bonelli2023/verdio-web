@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="es" data-l="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual de Verdio · Cómo usar la app paso a paso</title>
+<meta name="description" content="Manual de Verdio para choferes y repartidores de DoorDash, Uber Eats, UberX y Lyft: instalar, permisos, los colores de la tarjeta, modos de regreso, millas, gastos, impuestos y activación.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://verdiodriver.com/manual.html">
+<link rel="alternate" hreflang="es" href="https://verdiodriver.com/manual.html">
+<link rel="alternate" hreflang="en" href="https://verdiodriver.com/manual.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/manual.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E0F0E">
+<meta property="og:site_name" content="Verdio">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://verdiodriver.com/manual.html">
+<meta property="og:title" content="Manual de Verdio · Cómo usar la app paso a paso">
+<meta property="og:description" content="Todo lo que necesitas para usar Verdio: instalar, permisos, colores, modos, millas, gastos y activación.">
+<meta property="og:image" content="https://verdiodriver.com/media/verdio-og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#F3F5F1; --surface:#FFFFFF; --ink:#111512; --muted:#5A6660; --line:#D9DFDA;
+  --brand:#0F8A64; --brand-ink:#FFFFFF; --gold:#9A6F14; --tint:#E6F2EC;
+  --card-bg:#0E0F0E; --card-ink:#F2F5F1; --card-muted:#9AA6A0;
+  --go:#3DD9A4; --wait:#F2C14E; --stop:#F0605A; --zone:#5AA9F5; --homec:#B48CF5; --toward:#26C6DA;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0D0C; --surface:#151917; --ink:#EEF2EF; --muted:#9AA6A0; --line:#26302B;
+  --brand:#3DD9A4; --brand-ink:#06140E; --gold:#D4A64A; --tint:#12241C;
+  --card-bg:#1A1F1C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0D0C; --surface:#151917; --ink:#EEF2EF; --muted:#9AA6A0; --line:#26302B;
+  --brand:#3DD9A4; --brand-ink:#06140E; --gold:#D4A64A; --tint:#12241C;
+  --card-bg:#1A1F1C; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+html[data-l="en"] [data-l="es"], html[data-l="es"] [data-l="en"]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0;font-stretch:88%}
+h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:850;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,4.4vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:750;margin-top:26px}
+p{margin:12px 0 0}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 8px}
+/* header */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:1.4rem;color:var(--ink);text-decoration:none;font-stretch:95%}
+.dots{display:flex;flex-direction:column;gap:3px;background:var(--card-bg);padding:5px;border-radius:7px}
+.dots i{width:7px;height:7px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--stop)}.dots i:nth-child(2){background:var(--wait)}.dots i:nth-child(3){background:var(--go)}
+.tag{font:700 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+.spacer{flex:1}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 .82rem var(--mono);padding:7px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:var(--brand-ink);font:700 1rem var(--body);padding:12px 20px;border-radius:12px;text-decoration:none}
+.btn.sm{padding:8px 13px;font-size:.88rem;border-radius:10px}
+@media (max-width:560px){.bar .btn.sm,.bar .tag{display:none}}
+/* hero */
+.hero{padding-top:44px;padding-bottom:26px}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-top:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.meta span{font:600 .85rem var(--body);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+/* layout */
+.layout > div{min-width:0}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:44px;align-items:start;padding-bottom:60px}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;padding:4px 4px 12px 0}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:10px;padding:6px 10px;border-radius:9px;color:var(--muted);text-decoration:none;font-size:.93rem;line-height:1.3}
+.toc a::before{content:counter(t);font:700 .78rem var(--mono);color:var(--gold);min-width:1.4em;padding-top:2px}
+.toc a:hover{background:var(--surface);color:var(--ink)}
+.toc a.on{background:var(--tint);color:var(--ink);font-weight:600}
+.mtoc{display:none;margin:0 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.mtoc summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+.mtoc summary::after{content:"▾";color:var(--muted)}
+.mtoc[open] summary::after{content:"▴"}
+.mtoc .toc{position:static;max-height:none;padding:0 8px 10px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:0}.layout > .toc{display:none}.mtoc{display:block}}
+section.ch{padding-top:36px;margin-top:36px;border-top:1px solid var(--line)}
+section.ch:first-of-type{border-top:0;margin-top:0;padding-top:8px}
+.num{font:700 .8rem var(--mono);color:var(--gold);letter-spacing:.1em}
+ul,ol{padding-left:1.25em;margin:12px 0 0}
+li{margin:6px 0}
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:10px;margin-top:16px}
+.steps > li{min-width:0;counter-increment:s;position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;margin:0}
+.steps > li::before{content:counter(s);position:absolute;left:14px;top:13px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font:800 .95rem var(--display);display:grid;place-items:center}
+.steps > li b:first-child{display:block}
+.k{display:inline-block;font:600 .9em var(--body);background:var(--card-bg);color:var(--card-ink);border-radius:8px;padding:1px 8px;white-space:normal}
+.tip,.warn{border-radius:14px;padding:14px 16px;margin-top:16px;border:1px solid var(--line);background:var(--tint)}
+.warn{background:color-mix(in srgb,var(--stop) 10%,var(--surface));border-color:color-mix(in srgb,var(--stop) 35%,var(--line))}
+.tip b:first-child,.warn b:first-child{margin-right:4px}
+.lights{display:grid;gap:10px;margin-top:16px}
+.light{display:grid;grid-template-columns:46px minmax(0,1fr);gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.light i{width:46px;height:46px;border-radius:50%;display:block}
+.light b{display:block;font-family:var(--display);font-size:1.05rem;letter-spacing:.02em}
+.light span{color:var(--muted);font-size:.96rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.box h4{margin:0 0 4px;font:750 1.02rem var(--display)}
+.box p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+/* offer card mockup */
+.cardwrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:22px;align-items:start;margin-top:18px}
+@media (max-width:700px){.cardwrap{grid-template-columns:1fr}}
+.ocard{background:#0F1512;color:#F2F5F1;border-radius:20px;padding:16px 16px 12px;border:3px solid #2E7D32;box-shadow:0 20px 40px -24px rgba(0,0,0,.6);font-size:.92rem;line-height:1.4}
+.ocard .t{display:flex;justify-content:space-between;gap:10px}
+.ocard .t b{font:850 1.5rem var(--display);color:#3DD9A4}
+.ocard .cmp{width:52px;height:52px;flex:none;border-radius:50%;border:2px solid #9AA6A0;position:relative}
+.ocard .cmp::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:20px;background:#3DD9A4;transform:translateX(-50%) rotate(35deg);transform-origin:50% 100%;border-radius:2px}
+.ocard .cmpl{font:700 .75rem var(--mono);text-align:center;color:#9AA6A0}
+.ocard .line{margin-top:4px}
+.ocard .big{font-weight:700;font-size:1.02rem}
+.ocard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:.75rem;color:#9AA6A0}
+.ocard .foot span:last-child{background:#000;color:#fff;border-radius:10px;padding:5px 10px;font-weight:700}
+.co{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--gold);color:#fff;font:800 .72rem var(--mono);margin-right:6px;vertical-align:1px}
+.legend{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.legend li{margin:0}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.steps table{font-size:.88rem}.steps th,.steps td{padding:7px 5px}.steps th{font-size:.68rem;letter-spacing:.04em}
+details.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-top:10px}
+details.q summary{cursor:pointer;padding:14px 0;font-weight:700}
+details.q > div{padding:0 0 14px}
+details.q > div > p:first-child{margin-top:0}
+.top{display:inline-block;margin-top:18px;font-size:.88rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media print{header,.toc,.mtoc,.top,.lang{display:none!important}.layout{display:block}section.ch{break-inside:avoid-page}body{font-size:12pt}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Verdio</a>
+    <span class="tag"><span data-l="es">Manual</span><span data-l="en">User guide</span></span>
+    <span class="spacer"></span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="bES" type="button" data-set="es">ES</button>
+      <button id="bEN" type="button" data-set="en">EN</button>
+    </div>
+    <a class="btn sm" href="./#descargar"><span data-l="es">Descargar</span><span data-l="en">Download</span></a>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <p class="eyebrow"><span data-l="es">Manual del chofer</span><span data-l="en">Driver's guide</span></p>
+  <h1><span data-l="es">Cómo usar Verdio, paso a paso</span><span data-l="en">How to use Verdio, step by step</span></h1>
+  <p class="lead" data-l="es">Todo lo que necesitas para instalar Verdio, entender los colores de la tarjeta y llevar tus millas, gastos e impuestos. Escrito para choferes, sin palabras técnicas.</p>
+  <p class="lead" data-l="en">Everything you need to install Verdio, read the card colors and keep your miles, expenses and taxes. Written for drivers, no tech talk.</p>
+  <div class="meta">
+    <span>DoorDash · Uber Eats · UberX · Lyft</span>
+    <span>Android 11+</span>
+    <span data-l="es">Versión 1.15</span><span data-l="en">Version 1.15</span>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="Índice" id="tocSide"></nav>
+  <div>
+    <details class="mtoc" id="mtoc"><summary><span data-l="es">📑 Índice del manual</span><span data-l="en">📑 Table of contents</span></summary><nav class="toc" id="tocMob"></nav></details>
+
+<!-- 1 -->
+<section class="ch" id="empezar" data-es="Antes de empezar" data-en="Before you start">
+  <p class="num">01</p>
+  <h2><span data-l="es">Antes de empezar</span><span data-l="en">Before you start</span></h2>
+  <div data-l="es">
+    <p>Verdio es un ayudante que <b>mira tu pantalla</b> mientras trabajas. Cuando te llega una oferta de DoorDash, Uber Eats, UberX o Lyft, pone encima una <b>tarjeta de color</b> que te dice si te conviene, contando la gasolina, el desgaste del carro y las millas de regreso que nadie te paga.</p>
+    <ul>
+      <li><b>Necesitas:</b> un teléfono Android 11 o más nuevo, con la app de DoorDash (Dasher), Uber Driver o Lyft Driver.</li>
+      <li><b>Verdio no toca nada por ti.</b> No acepta ni rechaza ofertas: el botón siempre lo tocas tú.</li>
+      <li><b>No pide tu usuario ni tu contraseña</b> de ninguna app. Solo lee lo que ya está en tu pantalla.</li>
+      <li><b>Tus datos se quedan en tu teléfono.</b> Tu casa, tus zonas y tus millas no se mandan a ningún lado.</li>
+    </ul>
+  </div>
+  <div data-l="en">
+    <p>Verdio is a helper that <b>watches your screen</b> while you work. When a DoorDash, Uber Eats, UberX or Lyft offer comes in, it shows a <b>color card</b> on top that tells you if it's worth it, counting gas, wear on your car and the miles back that nobody pays you for.</p>
+    <ul>
+      <li><b>You need:</b> an Android phone, version 11 or newer, with the DoorDash (Dasher), Uber Driver or Lyft Driver app.</li>
+      <li><b>Verdio never taps anything for you.</b> It doesn't accept or decline offers: you always tap the button.</li>
+      <li><b>It never asks for your username or password</b> for any app. It only reads what's already on your screen.</li>
+      <li><b>Your data stays on your phone.</b> Your home, zones and miles aren't sent anywhere.</li>
+    </ul>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="instalar" data-es="Instalar Verdio" data-en="Install Verdio">
+  <p class="num">02</p>
+  <h2><span data-l="es">Instalar Verdio</span><span data-l="en">Install Verdio</span></h2>
+  <ol class="steps" data-l="es">
+    <li><b>Abre verdiodriver.com en el teléfono donde manejas.</b> Toca <span class="k">Descargar</span>.</li>
+    <li><b>Abre el archivo Verdio.apk.</b> Lo encuentras en la notificación de descarga o en la carpeta <i>Descargas</i>.</li>
+    <li><b>Permite instalar apps desconocidas.</b> La primera vez Android lo pide: actívalo para tu navegador (Chrome o Samsung Internet), vuelve atrás y toca <span class="k">Instalar</span>.</li>
+    <li><b>Abre Verdio.</b> Empieza la configuración inicial (sección 3).</li>
+  </ol>
+  <ol class="steps" data-l="en">
+    <li><b>Open verdiodriver.com on the phone you drive with.</b> Tap <span class="k">Download</span>.</li>
+    <li><b>Open the Verdio.apk file.</b> It's in the download notification or in your <i>Downloads</i> folder.</li>
+    <li><b>Allow installing unknown apps.</b> Android asks the first time: turn it on for your browser (Chrome or Samsung Internet), go back and tap <span class="k">Install</span>.</li>
+    <li><b>Open Verdio.</b> The first-time setup starts (section 3).</li>
+  </ol>
+  <div class="tip" data-l="es"><b>💡 Para actualizar:</b> borra primero los Verdio.apk viejos de tu carpeta <i>Descargas</i> y descarga el nuevo desde la web. Se instala encima y <b>no pierdes nada</b>: tus ajustes, millas y gastos se quedan.</div>
+  <div class="tip" data-l="en"><b>💡 To update:</b> first delete the old Verdio.apk files from your <i>Downloads</i> folder, then download the new one from the website. It installs on top and <b>you lose nothing</b>: settings, miles and expenses stay.</div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="configurar" data-es="Configuración inicial" data-en="First-time setup">
+  <p class="num">03</p>
+  <h2><span data-l="es">Configuración inicial (8 pasos)</span><span data-l="en">First-time setup (8 steps)</span></h2>
+  <p data-l="es">La primera vez que abres Verdio te guía paso a paso. Toca <span class="k">Siguiente →</span> para avanzar y <span class="k">Atrás</span> para corregir. Puedes repetirla cuando quieras desde <b>Avanzado → 🧭 Repetir la configuración inicial</b>.</p>
+  <p data-l="en">The first time you open Verdio it walks you through it. Tap <span class="k">Next →</span> to move on and <span class="k">Back</span> to fix something. You can run it again anytime from <b>Advanced → 🧭 Run the first-time setup again</b>.</p>
+  <ol class="steps" data-l="es">
+    <li><b>Idioma.</b> Español o English.</li>
+    <li><b>¿Millas o kilómetros?</b> Usa la misma unidad que muestran tus apps.</li>
+    <li><b>Tu vehículo.</b> Elige gasolina, híbrido o eléctrico. Escribe año, marca y modelo, las millas por galón en ciudad y el precio de la gasolina. Con eso Verdio calcula cuánto te cuesta de verdad cada milla.</li>
+    <li><b>Tu casa.</b> Si estás en casa, toca <span class="k">🏠 Estoy en casa: guardarla</span>. Si no, toca Siguiente y la guardas después.</li>
+    <li><b>Tus zonas de trabajo.</b> Una zona es donde te gusta trabajar (ej. "Downtown"). Escribe el nombre y el radio, y toca <span class="k">📍 Agregar zona DONDE ESTOY ahora</span> o <span class="k">🏠 Agregar zona alrededor de mi casa</span>. Necesitas por lo menos una.</li>
+    <li><b>¿Con qué apps trabajas?</b> Marca DoorDash y/o Uber (Uber Driver sirve para Uber Eats y UberX). Lyft Driver se vigila siempre, no hay que marcarlo.</li>
+    <li><b>¿Qué tan exigente?</b> Elige un punto de partida (lo ajustas después en "4. Tus números"):
+      <div class="tw"><table>
+        <tr><th>Opción</th><th>$/milla</th><th>Neto $/h</th><th>Mín.</th></tr>
+        <tr><td>🟢 Más ofertas</td><td>$1.40</td><td>$10</td><td>$5</td></tr>
+        <tr><td>⚖️ Equilibrado <small>(recomendado)</small></td><td>$1.70</td><td>$12</td><td>$6</td></tr>
+        <tr><td>💎 Exigente</td><td>$2.00</td><td>$15</td><td>$7</td></tr>
+      </table></div></li>
+    <li><b>Últimos permisos.</b> Los 3 permisos de la sección 4. Al terminar toca <span class="k">✓ Empezar a usar Verdio</span>.</li>
+  </ol>
+  <ol class="steps" data-l="en">
+    <li><b>Language.</b> Español or English.</li>
+    <li><b>Miles or kilometers?</b> Use the same unit your apps show.</li>
+    <li><b>Your vehicle.</b> Pick gas, hybrid or electric. Type year, make and model, city miles per gallon and gas price. Verdio uses this to work out what each mile really costs you.</li>
+    <li><b>Your home.</b> If you're home, tap <span class="k">🏠 I'm home: save it</span>. If not, tap Next and save it later.</li>
+    <li><b>Your work zones.</b> A zone is where you like to work (e.g. "Downtown"). Type the name and radius, then tap <span class="k">📍 Add zone WHERE I AM now</span> or <span class="k">🏠 Add zone around my home</span>. You need at least one.</li>
+    <li><b>Which apps do you drive for?</b> Check DoorDash and/or Uber (Uber Driver covers Uber Eats and UberX). Lyft Driver is always watched; no need to check it.</li>
+    <li><b>How picky?</b> Pick a starting point (fine-tune later in "4. Your numbers"):
+      <div class="tw"><table>
+        <tr><th>Option</th><th>$/mile</th><th>Net $/h</th><th>Min.</th></tr>
+        <tr><td>🟢 More offers</td><td>$1.40</td><td>$10</td><td>$5</td></tr>
+        <tr><td>⚖️ Balanced <small>(recommended)</small></td><td>$1.70</td><td>$12</td><td>$6</td></tr>
+        <tr><td>💎 Picky</td><td>$2.00</td><td>$15</td><td>$7</td></tr>
+      </table></div></li>
+    <li><b>Last permissions.</b> The 3 permissions in section 4. When done, tap <span class="k">✓ Start using Verdio</span>.</li>
+  </ol>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="permisos" data-es="Los 3 permisos" data-en="The 3 permissions">
+  <p class="num">04</p>
+  <h2><span data-l="es">Los 3 permisos (sin ellos no hay semáforo)</span><span data-l="en">The 3 permissions (no stoplight without them)</span></h2>
+  <p data-l="es">Están en la configuración inicial y también en la pantalla principal, sección <b>1. Permisos</b>.</p>
+  <p data-l="en">They're in the first-time setup and also on the main screen, section <b>1. Permissions</b>.</p>
+  <ol class="steps" data-l="es">
+    <li><b>Leer la pantalla (Accesibilidad).</b> Toca <span class="k">Activar servicio (Accesibilidad)</span> → busca <b>Verdio</b> → actívalo. Es lo que deja a Verdio ver la oferta.</li>
+    <li><b>Ubicación.</b> Toca <span class="k">Dar permiso de ubicación</span> y elige "Mientras se usa la app". Sirve para saber dónde estás, el regreso y tus millas.</li>
+    <li><b>Ubicación "Todo el tiempo" y batería "Sin restricciones".</b> Toca el botón: se abre la página de Verdio en Ajustes. Ahí entra a <i>Permisos → Ubicación → Permitir todo el tiempo</i>, y a <i>Batería → Sin restricciones</i>. Así Android no apaga Verdio mientras manejas.</li>
+  </ol>
+  <ol class="steps" data-l="en">
+    <li><b>Read the screen (Accessibility).</b> Tap <span class="k">Turn on service (Accessibility)</span> → find <b>Verdio</b> → turn it on. This is what lets Verdio see the offer.</li>
+    <li><b>Location.</b> Tap <span class="k">Allow location</span> and choose "While using the app". It's used for where you are, the drive back and your miles.</li>
+    <li><b>Location "All the time" and battery "Unrestricted".</b> Tap the button: Verdio's page in Settings opens. Go to <i>Permissions → Location → Allow all the time</i>, and <i>Battery → Unrestricted</i>. That way Android won't shut Verdio down while you drive.</li>
+  </ol>
+  <div class="warn" data-l="es"><b>⚠️ Samsung dice "Ajuste restringido":</b> ve a <i>Ajustes → Aplicaciones → Verdio</i>, toca los <b>⋮</b> (tres puntos arriba a la derecha) → <b>Permitir ajustes restringidos</b>. Luego vuelve a activar la Accesibilidad.</div>
+  <div class="warn" data-l="en"><b>⚠️ Samsung says "Restricted setting":</b> go to <i>Settings → Apps → Verdio</i>, tap the <b>⋮</b> (three dots, top right) → <b>Allow restricted settings</b>. Then turn Accessibility on again.</div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="pantalla" data-es="La pantalla principal" data-en="The main screen">
+  <p class="num">05</p>
+  <h2><span data-l="es">La pantalla principal</span><span data-l="en">The main screen</span></h2>
+  <p data-l="es">Arriba están los botones que usarás todos los días. Más abajo están las secciones numeradas con todos los ajustes.</p>
+  <p data-l="en">The buttons you'll use every day are at the top. Below are the numbered sections with all the settings.</p>
+  <div class="grid2" data-l="es">
+    <div class="box"><h4>🧪 / 🔑 Estado</h4><p>Dice cuántos días de prueba te quedan o hasta cuándo está activado. Debajo, <b>🔑 Activar Verdio</b> (o Renovar).</p></div>
+    <div class="box"><h4>🟢 Verdio: ENCENDIDO</h4><p>El interruptor principal. Apagado (⚫), Verdio no lee ofertas ni gasta batería.</p></div>
+    <div class="box"><h4>📍 Tu zona</h4><p>La zona con la que trabajas hoy. Tócala para elegir otra.</p></div>
+    <div class="box"><h4>🔊 Sonido y vibración</h4><p>Tócalo para silenciar la voz y la vibración (🔇). La tarjeta sigue saliendo.</p></div>
+    <div class="box"><h4>🚗 Turno</h4><p>Empieza o termina tu turno (🏁). Mientras dura, cuenta tus millas de trabajo.</p></div>
+    <div class="box"><h4>🔵 Volver a mi zona · 🟣 Ir a casa</h4><p>Modos de regreso (sección 7).</p></div>
+    <div class="box"><h4>📍 Ir hacia un lugar o dirección</h4><p>Para ir hacia un sitio o un rumbo (sección 7).</p></div>
+    <div class="box"><h4>🎯 Modo Oro (Uber)</h4><p>Para subir tu aceptación en Uber Pro (sección 10).</p></div>
+  </div>
+  <div class="grid2" data-l="en">
+    <div class="box"><h4>🧪 / 🔑 Status</h4><p>Shows how many trial days are left or until when it's active. Below it, <b>🔑 Activate Verdio</b> (or Renew).</p></div>
+    <div class="box"><h4>🟢 Verdio: ON</h4><p>The main switch. When OFF (⚫), Verdio doesn't read offers or use battery.</p></div>
+    <div class="box"><h4>📍 Your zone</h4><p>The zone you're working today. Tap it to pick another.</p></div>
+    <div class="box"><h4>🔊 Sound and vibration</h4><p>Tap to mute the voice and vibration (🔇). The card still shows.</p></div>
+    <div class="box"><h4>🚗 Shift</h4><p>Start or end your shift (🏁). While it's on, it counts your work miles.</p></div>
+    <div class="box"><h4>🔵 Back to my zone · 🟣 Head home</h4><p>Return modes (section 7).</p></div>
+    <div class="box"><h4>📍 Head to a place or direction</h4><p>To head toward a place or a direction (section 7).</p></div>
+    <div class="box"><h4>🎯 Gold mode (Uber)</h4><p>To raise your Uber Pro acceptance (section 10).</p></div>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="tarjeta" data-es="La tarjeta y sus colores" data-en="The card and its colors">
+  <p class="num">06</p>
+  <h2><span data-l="es">La tarjeta y sus colores</span><span data-l="en">The card and its colors</span></h2>
+  <p data-l="es">Cuando llega una oferta, Verdio pone una tarjeta arriba de la pantalla. Se cierra sola a los 30 segundos, o antes si la tocas.</p>
+  <p data-l="en">When an offer comes in, Verdio shows a card at the top of the screen. It closes by itself after 30 seconds, or sooner if you tap it.</p>
+  <div class="lights">
+    <div class="light"><i style="background:var(--go)"></i><div><b data-l="es">🟢 ACEPTAR</b><b data-l="en">🟢 ACCEPT</b><span data-l="es">Cumple tus números: paga bien por milla y por hora, contando el regreso.</span><span data-l="en">Meets your numbers: pays well per mile and per hour, counting the drive back.</span></div></div>
+    <div class="light"><i style="background:var(--wait)"></i><div><b data-l="es">🟡 CASI — TÚ DECIDES</b><b data-l="en">🟡 CLOSE — YOUR CALL</b><span data-l="es">Le falta poco. Mira las razones y decide tú. Las ofertas dobles nunca salen verdes: como mucho amarillas.</span><span data-l="en">Almost there. Read the reasons and decide. Double offers are never green: at most yellow.</span></div></div>
+    <div class="light"><i style="background:var(--stop)"></i><div><b data-l="es">🔴 RECHAZAR</b><b data-l="en">🔴 DECLINE</b><span data-l="es">Pierdes dinero o te saca demasiado lejos de tu zona.</span><span data-l="en">You lose money or it takes you too far from your zone.</span></div></div>
+    <div class="light"><i style="background:var(--zone)"></i><div><b data-l="es">🔵 TE ACERCA A TU ZONA</b><b data-l="en">🔵 GETS YOU BACK TO YOUR ZONE</b><span data-l="es">Solo con el modo "Volver a mi zona": la oferta te lleva de regreso, aunque pague poco.</span><span data-l="en">Only with "Back to my zone" on: the offer takes you back, even if it pays little.</span></div></div>
+    <div class="light"><i style="background:var(--homec)"></i><div><b data-l="es">🟣 TE ACERCA A CASA</b><b data-l="en">🟣 GETS YOU CLOSER TO HOME</b><span data-l="es">Solo con el modo "Ir a casa".</span><span data-l="en">Only with "Head home" on.</span></div></div>
+    <div class="light"><i style="background:var(--toward)"></i><div><b data-l="es">📍 TE LLEVA HACIA…</b><b data-l="en">📍 TAKES YOU TOWARD…</b><span data-l="es">Solo con "Ir hacia un lugar o dirección".</span><span data-l="en">Only with "Head to a place or direction" on.</span></div></div>
+  </div>
+
+  <h3><span data-l="es">Cómo leer la tarjeta</span><span data-l="en">How to read the card</span></h3>
+  <div class="cardwrap">
+    <div class="ocard" aria-hidden="true">
+      <div class="t"><div><b><span class="co">1</span><span data-l="es">🟢 ACEPTAR</span><span data-l="en">🟢 ACCEPT</span></b>
+        <div class="big"><span class="co">2</span>📱 DoorDash</div>
+        <div class="big"><span class="co">3</span>$9.50 · 4.2 mi · 20 min</div></div>
+        <div><div class="cmp"></div><div class="cmpl"><span class="co">4</span>NE</div></div></div>
+      <div class="line"><span class="co">5</span><span data-l="es">🔙 Regreso a tu zona: ~1.5 mi</span><span data-l="en">🔙 Return to your zone: ~1.5 mi</span></div>
+      <div class="line"><span class="co">6</span><span data-l="es">✓ Neto real $7.50 (con regreso) → $19/h</span><span data-l="en">✓ Real net $7.50 (with return) → $19/h</span></div>
+      <div class="line"><span class="co">7</span><span data-l="es">💵 El pago cubre tu meta</span><span data-l="en">💵 The pay meets your goal</span></div>
+      <div class="foot"><span data-l="es">Toca para cerrar</span><span data-l="en">Tap to close</span><span data-l="es">🔊 Sonido</span><span data-l="en">🔊 Sound</span></div>
+    </div>
+    <ol class="legend" data-l="es">
+      <li><span class="co">1</span><b>El color y qué hacer.</b> Si tienes la voz encendida, te lo dice en voz alta ("Verde, acepta").</li>
+      <li><span class="co">2</span><b>De qué app es</b>, y etiquetas como 📦 DOBLE, ⏰ HORA PICO, 🌙 NOCHE o 🤨 REVISAR.</li>
+      <li><span class="co">3</span><b>Pago · millas · minutos</b> de la oferta.</li>
+      <li><span class="co">4</span><b>Brújula</b> (arriba a la derecha): hacia dónde queda el destino y si te acerca ✅ o te aleja ❌ de tu zona.</li>
+      <li><span class="co">5</span><b>El regreso:</b> las millas vacías hasta tu zona (de noche, hasta tu casa: 🌙).</li>
+      <li><span class="co">6</span><b>Neto real:</b> lo que te queda en el bolsillo después de la gasolina y el desgaste, y cuánto es por hora.</li>
+      <li><span class="co">7</span><b>Para que valga:</b> si no llega, te dice cuánto tendría que pagar.</li>
+    </ol>
+    <ol class="legend" data-l="en">
+      <li><span class="co">1</span><b>The color and what to do.</b> With voice on, it says it out loud ("Green, accept").</li>
+      <li><span class="co">2</span><b>Which app</b>, plus tags like 📦 DOUBLE, ⏰ PEAK HOUR, 🌙 NIGHT or 🤨 CHECK.</li>
+      <li><span class="co">3</span><b>Pay · miles · minutes</b> of the offer.</li>
+      <li><span class="co">4</span><b>Compass</b> (top right): which way the drop-off is and whether it brings you closer ✅ or farther ❌ from your zone.</li>
+      <li><span class="co">5</span><b>The drive back:</b> the empty miles back to your zone (at night, back home: 🌙).</li>
+      <li><span class="co">6</span><b>Real net:</b> what stays in your pocket after gas and wear, and what that is per hour.</li>
+      <li><span class="co">7</span><b>Worth it at:</b> if it falls short, it tells you what it would need to pay.</li>
+    </ol>
+  </div>
+  <div class="tip" data-l="es"><b>🤨 "Demasiado bueno para ser verdad":</b> si Verdio lee un precio que parece un error, sale amarillo con 🤨 REVISAR. Mira la oferta tú mismo. Si el mismo precio se lee 2 veces, es real y puede salir verde.</div>
+  <div class="tip" data-l="en"><b>🤨 "Too good to be true":</b> if Verdio reads a price that looks like a mistake, it shows yellow with 🤨 CHECK. Look at the offer yourself. If the same price is read twice, it's real and can be green.</div>
+  <p data-l="es">El botón <span class="k">🔊 Sonido</span> de la tarjeta silencia todo al instante, sin salir de tu app de trabajo.</p>
+  <p data-l="en">The card's <span class="k">🔊 Sound</span> button mutes everything instantly, without leaving your work app.</p>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="modos" data-es="Modos de regreso" data-en="Return modes">
+  <p class="num">07</p>
+  <h2><span data-l="es">Modos de regreso</span><span data-l="en">Return modes</span></h2>
+  <p data-l="es">¿Terminaste lejos? Enciende un modo y Verdio te marca las ofertas que <b>te acercan</b>, aunque paguen poco, siempre que no pierdas dinero. El modo <b>se apaga solo al llegar</b>.</p>
+  <p data-l="en">Ended up far away? Turn on a mode and Verdio marks offers that <b>bring you closer</b>, even if they pay little, as long as you don't lose money. The mode <b>turns off by itself when you arrive</b>.</p>
+  <div class="grid2" data-l="es">
+    <div class="box"><h4>🔵 Volver a mi zona</h4><p>Las ofertas que te llevan hacia tu zona salen 🔵.</p></div>
+    <div class="box"><h4>🟣 Ir a casa</h4><p>Las que te acercan a tu casa salen 🟣. Necesitas tu casa guardada (sección 2 de la app).</p></div>
+    <div class="box"><h4>📍 Ir hacia un lugar o dirección</h4><p>Escribe un lugar (ej. Kissimmee), una dirección o coordenadas, o elige un rumbo (N, S, E, O…). Tócalo otra vez para apagarlo.</p></div>
+  </div>
+  <div class="grid2" data-l="en">
+    <div class="box"><h4>🔵 Back to my zone</h4><p>Offers that take you toward your zone show 🔵.</p></div>
+    <div class="box"><h4>🟣 Head home</h4><p>Offers that bring you closer to home show 🟣. You need your home saved (app section 2).</p></div>
+    <div class="box"><h4>📍 Head to a place or direction</h4><p>Type a place (e.g. Kissimmee), an address or coordinates, or pick a direction (N, S, E, W…). Tap it again to turn it off.</p></div>
+  </div>
+  <h3><span data-l="es">🌙 Último viaje de la noche</span><span data-l="en">🌙 Last trip of the night</span></h3>
+  <p data-l="es">En <b>4. Tus números → 🌙 Último viaje / noche</b>, activa <i>Contar el regreso hasta mi casa de noche</i>. Desde la hora que elijas (por defecto 7 pm) y hasta las 4 am, cada oferta cuenta el regreso vacío hasta tu casa. Un viaje que te deja lejos solo sale verde si paga ese regreso.</p>
+  <p data-l="en">In <b>4. Your numbers → 🌙 Last trip / night</b>, turn on <i>Count the return to my home at night</i>. From the hour you pick (7 pm by default) until 4 am, every offer counts the empty drive home. A trip that leaves you far away is green only if it pays for that drive.</p>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="numeros" data-es="Ajustar tus números" data-en="Set your numbers">
+  <p class="num">08</p>
+  <h2><span data-l="es">Ajustar tus números</span><span data-l="en">Set your numbers</span></h2>
+  <p data-l="es">En la sección <b>4. Tus números</b> decides cuándo una oferta sale verde. Al terminar toca <span class="k">💾 Guardar números</span>.</p>
+  <p data-l="en">In section <b>4. Your numbers</b> you decide when an offer shows green. When done, tap <span class="k">💾 Save numbers</span>.</p>
+  <div class="tw"><table data-l="es">
+    <tr><th>Ajuste</th><th>Qué significa</th></tr>
+    <tr><td>🚗 Gasolina, millas por galón, mantenimiento, depreciación</td><td>Lo que te cuesta cada milla. Verdio te muestra el total ("costo real por milla").</td></tr>
+    <tr><td>Meta: ganancia NETA por hora</td><td>Lo que quieres que te quede por hora, después de gastos y contando el regreso.</td></tr>
+    <tr><td>Pago mínimo aceptable</td><td>Por debajo de esto, la oferta no sale verde.</td></tr>
+    <tr><td>Regreso que se cobra</td><td>Qué parte de las millas de vuelta se cuenta como costo (0.5 = la mitad).</td></tr>
+    <tr><td>Velocidad promedio de regreso</td><td>Para calcular cuánto tiempo te toma volver.</td></tr>
+    <tr><td>Margen amarillo</td><td>Qué tan cerca de la meta sale amarillo (0.85 = 85% de la meta).</td></tr>
+    <tr><td>⏱️ La hora manda</td><td>Si la oferta cumple tu meta por hora, el $/milla ya no la frena: puede salir verde. Lo que importa es ganar más en menos tiempo.</td></tr>
+    <tr><td>🛵 Entregas: meta $/milla y radio</td><td>Para Uber Eats y DoorDash.</td></tr>
+    <tr><td>🚘 Pasajeros: meta $/milla y radio</td><td>Para UberX y Lyft. Los viajes suelen ir más lejos y pagar menos por milla, por eso van aparte.</td></tr>
+  </table>
+  <table data-l="en">
+    <tr><th>Setting</th><th>What it means</th></tr>
+    <tr><td>🚗 Gas, miles per gallon, maintenance, depreciation</td><td>What each mile costs you. Verdio shows the total ("real cost per mile").</td></tr>
+    <tr><td>Goal: NET earnings per hour</td><td>What you want to keep per hour, after costs and counting the drive back.</td></tr>
+    <tr><td>Minimum acceptable pay</td><td>Below this, the offer won't be green.</td></tr>
+    <tr><td>Return trip counted</td><td>How much of the miles back count as a cost (0.5 = half).</td></tr>
+    <tr><td>Average return speed</td><td>To work out how long it takes to get back.</td></tr>
+    <tr><td>Yellow margin</td><td>How close to your goal shows yellow (0.85 = 85% of goal).</td></tr>
+    <tr><td>⏱️ The hour rules</td><td>If the offer meets your hourly goal, $/mile no longer blocks it: it can be green. What matters is earning more in less time.</td></tr>
+    <tr><td>🛵 Deliveries: $/mile goal and radius</td><td>For Uber Eats and DoorDash.</td></tr>
+    <tr><td>🚘 Rides: $/mile goal and radius</td><td>For UberX and Lyft. Rides usually go farther and pay less per mile, so they're separate.</td></tr>
+  </table></div>
+  <div class="tip" data-l="es"><b>💡 Consejo:</b> empieza con "Equilibrado" y trabaja una semana. Si casi nada sale verde, baja un poco la meta. Si aceptas muchas que luego no valieron, súbela.</div>
+  <div class="tip" data-l="en"><b>💡 Tip:</b> start with "Balanced" and drive for a week. If almost nothing is green, lower the goal a little. If you accept many that weren't worth it, raise it.</div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="condiciones" data-es="Condiciones extra" data-en="Extra conditions">
+  <p class="num">09</p>
+  <h2><span data-l="es">Condiciones extra</span><span data-l="en">Extra conditions</span></h2>
+  <p data-l="es">En <b>5. Condiciones extra</b> cada una tiene su interruptor. Al terminar toca <span class="k">💾 Guardar condiciones</span>.</p>
+  <p data-l="en">In <b>5. Extra conditions</b> each one has its own switch. When done, tap <span class="k">💾 Save conditions</span>.</p>
+  <div class="grid2" data-l="es">
+    <div class="box"><h4>🚫 Restaurantes a evitar</h4><p>Escribe nombres separados por coma. Esas ofertas salen 🔴.</p></div>
+    <div class="box"><h4>📦 Ofertas dobles</h4><p>Pago mínimo propio y más regreso contado, porque la 2ª entrega suele ir lejos.</p></div>
+    <div class="box"><h4>⏰ Hora pico</h4><p>Metas más altas en las horas que escribas (ej. 11-13,17-21).</p></div>
+    <div class="box"><h4>⏱️ Tiempo máximo</h4><p>Minutos máximos hasta la entrega.</p></div>
+    <div class="box"><h4>🛣️ Millas máximas por oferta</h4><p>Más millas que esto, no.</p></div>
+    <div class="box"><h4>😌 Modo calma</h4><p>Si pasan los minutos que elijas sin ningún verde, el amarillo se vuelve más flexible. Vuelve a lo normal con el próximo verde.</p></div>
+    <div class="box"><h4>⏱️ Ofertas cortas que convienen</h4><p>Una oferta corta que paga bien por milla sale 🟡 aunque no llegue a tu mínimo, si mientras dura paga igual o más que lo que de verdad ganas por hora conectado.</p></div>
+  </div>
+  <div class="grid2" data-l="en">
+    <div class="box"><h4>🚫 Restaurants to avoid</h4><p>Type names separated by commas. Those offers show 🔴.</p></div>
+    <div class="box"><h4>📦 Double offers</h4><p>Their own minimum pay and more return counted, because the 2nd drop-off often goes far.</p></div>
+    <div class="box"><h4>⏰ Peak hours</h4><p>Higher goals during the hours you type (e.g. 11-13,17-21).</p></div>
+    <div class="box"><h4>⏱️ Max time</h4><p>Max minutes until delivery.</p></div>
+    <div class="box"><h4>🛣️ Max miles per offer</h4><p>Nothing longer than this.</p></div>
+    <div class="box"><h4>😌 Calm mode</h4><p>If the minutes you pick pass without a green, yellow gets more flexible. Back to normal with the next green.</p></div>
+    <div class="box"><h4>⏱️ Short offers worth taking</h4><p>A short offer that pays well per mile shows 🟡 even below your minimum, if while it lasts it pays as much as or more than what you really earn per hour online.</p></div>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="oro" data-es="Modo Oro (Uber Pro)" data-en="Gold mode (Uber Pro)">
+  <p class="num">10</p>
+  <h2><span data-l="es">🎯 Modo Oro (Uber Pro)</span><span data-l="en">🎯 Gold mode (Uber Pro)</span></h2>
+  <div data-l="es">
+    <p>Uber cuenta tu aceptación en tus últimas 100 solicitudes exclusivas (las del Radar no cuentan). Con el Modo Oro encendido, Verdio cuenta las que aceptas y te marca <b>🟡 🎯</b> las ofertas cortas y sin pérdida mientras te falte. También marca 🔴 cualquier oferta que llegue con un pedido en curso, para cuidar tu puntualidad.</p>
+    <ol>
+      <li>En Uber, mira <i>Uber Pro → Tasa de aceptación</i>: ¿cuántas aceptaste de las últimas 100?</li>
+      <li>En Verdio, sección <b>5B</b>, escribe ese número y toca <span class="k">🔄 Actualizar con lo que dice Uber</span>.</li>
+      <li>Enciende <span class="k">🎯 Modo Oro (Uber)</span> arriba en la pantalla principal.</li>
+    </ol>
+    <p>Si Verdio anotó mal la última oferta, corrígela con <span class="k">✓ La última la ACEPTÉ</span> o <span class="k">✗ La última la RECHACÉ</span>. Cuando entregues, toca <span class="k">📦 Ya entregué</span>.</p>
+  </div>
+  <div data-l="en">
+    <p>Uber counts your acceptance over your last 100 exclusive requests (Radar ones don't count). With Gold mode on, Verdio counts what you accept and marks short, no-loss offers <b>🟡 🎯</b> while you still need it. It also marks 🔴 any offer that arrives while an order is in progress, to protect your on-time rate.</p>
+    <ol>
+      <li>In Uber, check <i>Uber Pro → Acceptance rate</i>: how many did you accept out of the last 100?</li>
+      <li>In Verdio, section <b>5B</b>, type that number and tap <span class="k">🔄 Update with what Uber says</span>.</li>
+      <li>Turn on <span class="k">🎯 Gold mode (Uber)</span> at the top of the main screen.</li>
+    </ol>
+    <p>If Verdio logged the last offer wrong, fix it with <span class="k">✓ I ACCEPTED the last one</span> or <span class="k">✗ I DECLINED the last one</span>. When you deliver, tap <span class="k">📦 Delivered</span>.</p>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 11 -->
+<section class="ch" id="millas" data-es="Turnos y millas" data-en="Shifts and miles">
+  <p class="num">11</p>
+  <h2><span data-l="es">Turnos y millas (para el IRS)</span><span data-l="en">Shifts and miles (for the IRS)</span></h2>
+  <div data-l="es">
+    <p>Las millas de trabajo se descuentan de tus impuestos. Verdio las cuenta solas con el GPS.</p>
+    <h3>🚗 El turno</h3>
+    <ul>
+      <li>Toca <span class="k">🚗 Empezar turno</span> al salir y <span class="k">🏁 Terminar turno</span> al acabar.</li>
+      <li><b>Turno automático</b> (sección 6): empieza solo al abrir DoorDash o Uber. Se termina con 🏁, o solo si pasas 1 hora sin abrir las apps y sin moverte.</li>
+      <li><b>📍 Contar millas siempre</b> (sección 6): con Verdio encendido, apenas el carro se mueve cuenta millas. Los viajes sin app de trabajo quedan como ⚪ Personal o 🏠 Ida al trabajo.</li>
+    </ul>
+    <h3>🏠 En casa</h3>
+    <ul>
+      <li><b>😴 Dormir en casa</b> (sección 2): al llegar a casa, Verdio deja de leer pantallas y cierra el turno. Ahorra batería.</li>
+      <li><b>☀️ Despertar en casa por 1 hora:</b> por si vas a empezar a trabajar desde casa.</li>
+    </ul>
+    <h3>🗂️ Mis viajes y odómetro (sección 6B)</h3>
+    <ul>
+      <li>Cada vez que paras 3 minutos empieza un viaje nuevo. Verdio sugiere a qué app corresponde: <b>toca un viaje para cambiarlo</b>. Usa ◀ ▶ para ver otros días y <span class="k">✓ Confirmar todo este día</span> cuando esté bien.</li>
+      <li>¿Manejaste sin Verdio? Toca <span class="k">✍️ Agregar millas a mano</span>.</li>
+      <li><b>Odómetro:</b> escribe lo que marca tu carro y toca <span class="k">💾 Guardar lectura del odómetro</span>. La próxima vez que lo escribas, Verdio te dice si se escaparon millas. Hazlo una vez por semana o al empezar el mes.</li>
+      <li><b>📊 Informes de Excel:</b> libro de millas para el IRS, resumen por app y por mes (Schedule C) y lecturas del odómetro.</li>
+    </ul>
+  </div>
+  <div data-l="en">
+    <p>Work miles come off your taxes. Verdio counts them by itself with GPS.</p>
+    <h3>🚗 The shift</h3>
+    <ul>
+      <li>Tap <span class="k">🚗 Start shift</span> when you head out and <span class="k">🏁 End shift</span> when you're done.</li>
+      <li><b>Automatic shift</b> (section 6): starts by itself when DoorDash or Uber opens. It ends with 🏁, or by itself after 1 hour without the apps and without moving.</li>
+      <li><b>📍 Always count miles</b> (section 6): with Verdio ON, as soon as the car moves it counts miles. Trips with no work app are saved as ⚪ Personal or 🏠 Commute.</li>
+    </ul>
+    <h3>🏠 At home</h3>
+    <ul>
+      <li><b>😴 Sleep at home</b> (section 2): when you get home, Verdio stops reading screens and ends the shift. Saves battery.</li>
+      <li><b>☀️ Wake up at home for 1 hour:</b> for when you start working from home.</li>
+    </ul>
+    <h3>🗂️ My trips and odometer (section 6B)</h3>
+    <ul>
+      <li>Every 3-minute stop starts a new trip. Verdio suggests which app it belongs to: <b>tap a trip to change it</b>. Use ◀ ▶ to see other days and <span class="k">✓ Confirm the whole day</span> when it's right.</li>
+      <li>Drove without Verdio? Tap <span class="k">✍️ Add miles by hand</span>.</li>
+      <li><b>Odometer:</b> type what your car shows and tap <span class="k">💾 Save odometer reading</span>. Next time you type it, Verdio tells you if any miles slipped by. Do it once a week or at the start of the month.</li>
+      <li><b>📊 Excel reports:</b> IRS mileage log, summary by app and by month (Schedule C) and odometer readings.</li>
+    </ul>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 12 -->
+<section class="ch" id="dinero" data-es="Gastos, ganancias e impuestos" data-en="Expenses, earnings and taxes">
+  <p class="num">12</p>
+  <h2><span data-l="es">Gastos, ganancias e impuestos</span><span data-l="en">Expenses, earnings and taxes</span></h2>
+  <div data-l="es">
+    <p>En la sección <b>6C</b> anotas tu dinero. Verdio lo junta con tus millas y te arma el Excel para los impuestos.</p>
+    <ol class="steps">
+      <li><b><span class="k" style="background:#B71C1C">➕ Anotar un GASTO</span></b>Elige el tipo: gasolina, mantenimiento y llantas, seguro, registro y placas, lavado, parqueos y peajes, teléfono, bolsas y accesorios, apps y suscripciones, u otros. Escribe el monto. En gasolina, si llenas el tanque y anotas galones y odómetro, Verdio calcula tu rendimiento real.</li>
+      <li><b><span class="k" style="background:#1B5E20">➕ Anotar una GANANCIA</span></b>Elige la app y escribe lo que te pagó. En <b>Uber</b> anota un solo total por día (entregas y viajes juntos, como te lo da Uber). DoorDash y Lyft van aparte.</li>
+      <li><b><span class="k" style="background:#0D47A1">📤 Enviar el informe</span></b>De HOY, de ESTE MES o de ESTE AÑO. El de mes y año es un Excel con impuestos (y qué método te conviene), ganancias, gastos, viajes y odómetro. Lo mandas por WhatsApp, Gmail o Drive a tu contador.</li>
+    </ol>
+    <h3>💵 Sobres del día (sección 6)</h3>
+    <p>Escribe cuánto ganaste hoy en total y toca <span class="k">💵 Calcular sobres</span>. Verdio usa las millas de hoy y te dice: la gasolina usada, cuánto apartar para el carro, para los impuestos (10% por defecto) y para días libres o de enfermedad (6% por defecto), cuánto te queda para gastar y cuánto te descuenta el IRS por las millas de hoy.</p>
+    <h3>📱 Tu teléfono</h3>
+    <p>Escribe qué % del uso de tu teléfono es para trabajar. Solo esa parte de la factura se descuenta.</p>
+    <div class="tip"><b>💡</b> Verdio te ayuda a organizarte, pero no reemplaza a tu contador. Llévale el Excel.</div>
+  </div>
+  <div data-l="en">
+    <p>In section <b>6C</b> you log your money. Verdio puts it together with your miles and builds the tax Excel.</p>
+    <ol class="steps">
+      <li><b><span class="k" style="background:#B71C1C">➕ Log an EXPENSE</span></b>Pick the type: gas, maintenance and tires, insurance, registration and tags, car wash, parking and tolls, phone, hot bags and supplies, apps and subscriptions, or other. Type the amount. For gas, if you fill the tank and log gallons and odometer, Verdio works out your real fuel economy.</li>
+      <li><b><span class="k" style="background:#1B5E20">➕ Log EARNINGS</span></b>Pick the app and type what it paid you. For <b>Uber</b> log one total per day (deliveries and rides together, as Uber shows it). DoorDash and Lyft are separate.</li>
+      <li><b><span class="k" style="background:#0D47A1">📤 Send the report</span></b>For TODAY, THIS MONTH or THIS YEAR. Month and year are an Excel with taxes (and which method is better), earnings, expenses, trips and odometer. Send it by WhatsApp, Gmail or Drive to your accountant.</li>
+    </ol>
+    <h3>💵 Today's envelopes (section 6)</h3>
+    <p>Type how much you earned today in total and tap <span class="k">💵 Calculate envelopes</span>. Using today's miles, Verdio tells you: gas used, how much to set aside for the car, for taxes (10% by default) and for days off or sick days (6% by default), what's left to spend, and your IRS deduction for today's miles.</p>
+    <h3>📱 Your phone</h3>
+    <p>Type what % of your phone use is for work. Only that part of the bill is deducted.</p>
+    <div class="tip"><b>💡</b> Verdio helps you stay organized, but it doesn't replace your accountant. Bring them the Excel.</div>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 13 -->
+<section class="ch" id="probar" data-es="Probar, mejores horas e historial" data-en="Test, best hours and history">
+  <p class="num">13</p>
+  <h2><span data-l="es">Probar sin manejar, mejores horas e historial</span><span data-l="en">Test without driving, best hours and history</span></h2>
+  <div class="grid2" data-l="es">
+    <div class="box"><h4>7. Probar sin manejar</h4><p>Toca un ejemplo (DoorDash, Uber Eats, UberX o Lyft) o pega una oferta, y toca <b>Probar oferta</b>. Así ves cómo afectan tus números sin salir a la calle. <b>🌙 Probar como si fueran las 8 pm</b> muestra la misma oferta con el regreso de noche.</p></div>
+    <div class="box"><h4>🕐 Tus mejores horas</h4><p>Sale de las ofertas que Verdio evaluó en los últimos 60 días. Con 1–2 semanas de uso es confiable.</p></div>
+    <div class="box"><h4>8. Historial</h4><p>Las últimas 100 ofertas con su color y sus razones.</p></div>
+  </div>
+  <div class="grid2" data-l="en">
+    <div class="box"><h4>7. Test without driving</h4><p>Tap an example (DoorDash, Uber Eats, UberX or Lyft) or paste an offer, and tap <b>Test offer</b>. See how your numbers play out without hitting the road. <b>🌙 Test as if it were 8 pm</b> shows the same offer with the night drive home.</p></div>
+    <div class="box"><h4>🕐 Your best hours</h4><p>Comes from the offers Verdio rated in the last 60 days. Reliable after 1–2 weeks of use.</p></div>
+    <div class="box"><h4>8. History</h4><p>Your last 100 offers with their color and reasons.</p></div>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 14 -->
+<section class="ch" id="respaldo" data-es="Respaldo y cambio de teléfono" data-en="Backup and new phone">
+  <p class="num">14</p>
+  <h2><span data-l="es">Respaldo y cambio de teléfono</span><span data-l="en">Backup and changing phones</span></h2>
+  <div data-l="es">
+    <p>En <b>9. Respaldo de ajustes</b>:</p>
+    <ul>
+      <li><span class="k">💾 Guardar mis ajustes en un archivo</span> crea un archivo <i>Verdio-fecha.json</i> con tus números, zonas, casa, turnos, viajes y odómetro. Guárdalo en Drive o mándatelo por correo. Hazlo una vez al mes.</li>
+      <li><span class="k">📂 Restaurar ajustes desde un archivo</span> lo carga en un teléfono nuevo o después de reinstalar.</li>
+    </ul>
+    <div class="tip"><b>📱 ¿Teléfono nuevo?</b> Tu código de activación va unido al teléfono. Escríbenos con el ID del teléfono nuevo y te mandamos un código por el tiempo que te quede.</div>
+  </div>
+  <div data-l="en">
+    <p>In <b>9. Settings backup</b>:</p>
+    <ul>
+      <li><span class="k">💾 Save my settings to a file</span> creates a <i>Verdio-date.json</i> file with your numbers, zones, home, shifts, trips and odometer. Keep it in Drive or email it to yourself. Do it once a month.</li>
+      <li><span class="k">📂 Restore settings from a file</span> loads it on a new phone or after reinstalling.</li>
+    </ul>
+    <div class="tip"><b>📱 New phone?</b> Your activation code is tied to the phone. Write to us with the new phone's ID and we'll send a code for the time you have left.</div>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 15 -->
+<section class="ch" id="activar" data-es="Prueba gratis y activación" data-en="Free trial and activation">
+  <p class="num">15</p>
+  <h2><span data-l="es">Prueba gratis y activación</span><span data-l="en">Free trial and activation</span></h2>
+  <p data-l="es">Los primeros <b>14 días son gratis</b>. Después, <b>$6.99 al mes</b> o <b>$59.99 al año</b> (sale a $5 al mes). Cuando termina la prueba, Verdio deja de leer ofertas hasta que pongas tu código; tus ajustes, millas e historial se quedan guardados.</p>
+  <p data-l="en">The first <b>14 days are free</b>. After that, <b>$6.99 a month</b> or <b>$59.99 a year</b> (about $5 a month). When the trial ends, Verdio stops reading offers until you enter your code; your settings, miles and history stay saved.</p>
+  <ol class="steps" data-l="es">
+    <li><b>Abre Verdio y toca 🔑 Activar Verdio.</b> Ahí ves el <b>ID de tu teléfono</b> (ej. 9B92-A5B0). Los números salen en dorado y las letras en verde. El 0 siempre es cero: en el ID no hay letra O.</li>
+    <li><b>Paga en verdiodriver.com</b> con tarjeta o PayPal, y escribe tu ID cuando te lo pida. También puedes tocar <span class="k">📤 Enviar</span> para mandarnos el ID.</li>
+    <li><b>Te llega un mensaje con tu código</b> (empieza con VRD2-), normalmente en pocas horas (máximo 24 h). Mantén presionado el mensaje y toca <b>Copiar</b>.</li>
+    <li><b>En Verdio toca <span class="k">📋 Pegar código</span> y luego <span class="k">🔑 Activar</span>.</b> No tienes que escribir nada. Verás "✅ Verdio activado hasta el…".</li>
+  </ol>
+  <ol class="steps" data-l="en">
+    <li><b>Open Verdio and tap 🔑 Activate Verdio.</b> You'll see your <b>phone ID</b> (e.g. 9B92-A5B0). Numbers are in gold and letters in green. 0 is always zero: there's no letter O in the ID.</li>
+    <li><b>Pay at verdiodriver.com</b> by card or PayPal, and type your ID when asked. You can also tap <span class="k">📤 Send</span> to send us the ID.</li>
+    <li><b>You get a message with your code</b> (it starts with VRD2-), usually within a few hours (24 h max). Long-press the message and tap <b>Copy</b>.</li>
+    <li><b>In Verdio tap <span class="k">📋 Paste code</span> and then <span class="k">🔑 Activate</span>.</b> Nothing to type. You'll see "✅ Verdio active until…".</li>
+  </ol>
+  <p data-l="es">Para renovar, el mismo camino desde <span class="k">🔑 Renovar Verdio</span>.</p>
+  <p data-l="en">To renew, same steps from <span class="k">🔑 Renew Verdio</span>.</p>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 16 -->
+<section class="ch" id="problemas" data-es="Problemas comunes" data-en="Troubleshooting">
+  <p class="num">16</p>
+  <h2><span data-l="es">Problemas comunes</span><span data-l="en">Troubleshooting</span></h2>
+  <div data-l="es">
+    <details class="q"><summary>No me sale la tarjeta cuando llega una oferta</summary><div>
+      <p>Revisa en este orden:</p>
+      <ol><li>Arriba dice <b>🟢 Verdio: ENCENDIDO</b>.</li>
+      <li>La prueba no se acabó, o Verdio está activado (mira el recuadro dorado de arriba).</li>
+      <li>La Accesibilidad de Verdio sigue activada (sección 1). Algunos teléfonos la apagan después de actualizar o de reiniciar.</li>
+      <li>La batería de Verdio está en "Sin restricciones".</li>
+      <li>No estás en casa con "Dormir en casa" encendido. Si quieres trabajar desde casa, toca ☀️ Despertar en casa por 1 hora.</li></ol>
+      <p>Si sigue sin salir, en la sección 3 enciende <b>Lectura de respaldo</b>.</p></div></details>
+    <details class="q"><summary>Samsung no me deja activar la Accesibilidad ("Ajuste restringido")</summary><div>
+      <p>Ajustes → Aplicaciones → Verdio → <b>⋮</b> → <b>Permitir ajustes restringidos</b>. Luego vuelve a intentarlo.</p></div></details>
+    <details class="q"><summary>La tarjeta me tapa el mapa</summary><div>
+      <p>Tócala y se cierra. Se cierra sola a los 30 segundos.</p></div></details>
+    <details class="q"><summary>Dice "Sin GPS" o "No ubiqué el destino"</summary><div>
+      <p>Verdio no tuvo tu ubicación o la oferta no mostraba el destino. Evalúa igual, pero el regreso y la brújula son estimados. Revisa que la ubicación esté en "Todo el tiempo".</p></div></details>
+    <details class="q"><summary>Casi nada me sale verde</summary><div>
+      <p>Tus metas pueden estar muy altas para tu ciudad. Baja un poco la meta por milla o por hora en "4. Tus números", o activa "⏱️ La hora manda". Prueba con "7. Probar sin manejar".</p></div></details>
+    <details class="q"><summary>Gasta mucha batería</summary><div>
+      <p>Apaga "Lectura reforzada siempre" (sección 3), deja encendido "🔋 Ahorro de batería automático" y usa "😴 Dormir en casa". Apaga Verdio cuando no trabajes.</p></div></details>
+    <details class="q"><summary>El código dice que no es de este teléfono</summary><div>
+      <p>Cada código sirve solo para el ID con el que se hizo. Revisa que el ID que mandaste sea el que sale en tu pantalla (el 0 es cero, no letra O) y escríbenos.</p></div></details>
+    <details class="q"><summary>Instalé la versión nueva pero sigue diciendo la versión vieja</summary><div>
+      <p>Abriste un Verdio.apk viejo. Borra todos los Verdio.apk de <i>Descargas</i> y descarga otra vez desde verdiodriver.com.</p></div></details>
+    <details class="q"><summary>¿Funciona en iPhone?</summary><div><p>Por ahora solo en Android.</p></div></details>
+  </div>
+  <div data-l="en">
+    <details class="q"><summary>The card doesn't show when an offer comes in</summary><div>
+      <p>Check in this order:</p>
+      <ol><li>The top says <b>🟢 Verdio: ON</b>.</li>
+      <li>The trial hasn't ended, or Verdio is active (see the gold box at the top).</li>
+      <li>Verdio's Accessibility is still on (section 1). Some phones turn it off after an update or a restart.</li>
+      <li>Verdio's battery is set to "Unrestricted".</li>
+      <li>You're not at home with "Sleep at home" on. To work from home, tap ☀️ Wake up at home for 1 hour.</li></ol>
+      <p>If it still doesn't show, turn on <b>Backup reading</b> in section 3.</p></div></details>
+    <details class="q"><summary>Samsung won't let me turn on Accessibility ("Restricted setting")</summary><div>
+      <p>Settings → Apps → Verdio → <b>⋮</b> → <b>Allow restricted settings</b>. Then try again.</p></div></details>
+    <details class="q"><summary>The card covers the map</summary><div>
+      <p>Tap it and it closes. It closes by itself after 30 seconds.</p></div></details>
+    <details class="q"><summary>It says "No GPS" or "Couldn't find the drop-off"</summary><div>
+      <p>Verdio didn't have your location or the offer didn't show the drop-off. It still rates it, but the drive back and compass are estimates. Make sure location is set to "All the time".</p></div></details>
+    <details class="q"><summary>Almost nothing shows green</summary><div>
+      <p>Your goals may be too high for your city. Lower your per-mile or hourly goal a little in "4. Your numbers", or turn on "⏱️ The hour rules". Try it in "7. Test without driving".</p></div></details>
+    <details class="q"><summary>It uses a lot of battery</summary><div>
+      <p>Turn off "Always use reinforced reading" (section 3), keep "🔋 Automatic battery saver" on and use "😴 Sleep at home". Turn Verdio off when you're not working.</p></div></details>
+    <details class="q"><summary>The code says it isn't for this phone</summary><div>
+      <p>Each code works only for the ID it was made for. Check that the ID you sent is the one on your screen (0 is zero, not the letter O) and write to us.</p></div></details>
+    <details class="q"><summary>I installed the new version but it still shows the old one</summary><div>
+      <p>You opened an old Verdio.apk. Delete every Verdio.apk from <i>Downloads</i> and download again from verdiodriver.com.</p></div></details>
+    <details class="q"><summary>Does it work on iPhone?</summary><div><p>Android only for now.</p></div></details>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 17 -->
+<section class="ch" id="ayuda" data-es="¿Necesitas ayuda?" data-en="Need help?">
+  <p class="num">17</p>
+  <h2><span data-l="es">¿Necesitas ayuda?</span><span data-l="en">Need help?</span></h2>
+  <p data-l="es">Escríbenos a <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a> o por WhatsApp desde la sección <a href="./#contacto">Contacto</a> de la web. Leemos todos los mensajes. Si una oferta salió con el color equivocado, mándanos una captura de la oferta y de la tarjeta.</p>
+  <p data-l="en">Write to <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a> or on WhatsApp from the <a href="./#contacto">Contact</a> section of the website. We read every message. If an offer showed the wrong color, send us a screenshot of the offer and the card.</p>
+  <p style="margin-top:20px"><a class="btn" href="./#descargar"><span data-l="es">Descargar Verdio · 14 días gratis</span><span data-l="en">Download Verdio · 14 days free</span></a></p>
+</section>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Verdio · <a href="./" style="color:inherit">verdiodriver.com</a> · <a href="mailto:hola@verdiodriver.com" style="color:inherit">hola@verdiodriver.com</a></span>
+    <span data-l="es">Verdio es una app independiente. No está afiliada ni respaldada por DoorDash, Uber ni Lyft.</span><span data-l="en">Verdio is an independent app. It is not affiliated with or endorsed by DoorDash, Uber or Lyft.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var secs=[].slice.call(document.querySelectorAll('section.ch'));
+  function buildToc(l){
+    var html='<ol>'+secs.map(function(s){return '<li><a href="#'+s.id+'">'+(l==='en'?s.dataset.en:s.dataset.es)+'</a></li>'}).join('')+'</ol>';
+    document.getElementById('tocSide').innerHTML=html;
+    document.getElementById('tocMob').innerHTML=html;
+    document.querySelectorAll('#tocMob a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mtoc').open=false})});
+  }
+  function setLang(l){
+    root.setAttribute('data-l',l); root.lang=l;
+    document.getElementById('bES').setAttribute('aria-pressed',l==='es');
+    document.getElementById('bEN').setAttribute('aria-pressed',l==='en');
+    document.title = l==='en' ? 'Verdio user guide · How to use the app step by step' : 'Manual de Verdio · Cómo usar la app paso a paso';
+    try{localStorage.setItem('verdio-lang',l)}catch(e){}
+    buildToc(l); mark();
+  }
+  function mark(){
+    var y=window.scrollY+120, cur=secs[0].id;
+    secs.forEach(function(s){ if(s.offsetTop<=y) cur=s.id; });
+    document.querySelectorAll('#tocSide a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+  }
+  window.addEventListener('scroll',mark,{passive:true});
+  var saved=null; try{saved=localStorage.getItem('verdio-lang')}catch(e){}
+  var qp=null; try{qp=new URLSearchParams(location.search).get('lang')}catch(e){}
+  var start=(qp==='en'||qp==='es')?qp:saved||((navigator.language||'es').toLowerCase().indexOf('en')===0?'en':'es');
+  document.querySelectorAll('[data-set]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+  document.querySelector('main').id='top';
+  setLang(start);
+})();
+</script>
+</body>
+</html>

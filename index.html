@@ -75,6 +75,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .dots i{width:7px;height:7px;border-radius:50%;display:block}
 .dots i:nth-child(1){background:var(--stop)}.dots i:nth-child(2){background:var(--wait)}.dots i:nth-child(3){background:var(--go)}
 .spacer{flex:1}
+.navl{font:600 .9rem var(--body);color:var(--ink);text-decoration:none;padding:7px 10px;border-radius:10px;white-space:nowrap}
+.navl:hover{background:var(--surface)}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
 .lang button{background:none;border:0;color:var(--muted);font:600 .82rem var(--mono);padding:7px 11px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
@@ -211,6 +213,7 @@ footer .wrap{display:grid;gap:8px}
   <div class="wrap bar">
     <a class="logo" href="#top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Verdio</a>
     <span class="spacer"></span>
+    <a class="navl" href="manual.html"><span data-l="es">📖 Manual</span><span data-l="en">📖 Guide</span></a>
     <div class="lang" role="group" aria-label="Idioma / Language">
       <button id="bES" type="button" data-set="es">ES</button>
       <button id="bEN" type="button" data-set="en">EN</button>
@@ -438,6 +441,7 @@ footer .wrap{display:grid;gap:8px}
   <section>
     <div class="wrap">
       <div class="head"><p class="eyebrow" data-l="es">Preguntas</p><p class="eyebrow" data-l="en">Questions</p></div>
+      <p class="mlink" style="margin:0 0 14px"><a href="manual.html"><span data-l="es">📖 ¿Cómo se usa? Lee el manual completo paso a paso →</span><span data-l="en">📖 How does it work? Read the full step-by-step guide →</span></a></p>
       <details><summary><span data-l="es">¿Verdio acepta ofertas por mí?</span><span data-l="en">Does Verdio accept offers for me?</span></summary>
         <p data-l="es">No. Verdio solo lee la oferta y te muestra el resultado. La decisión y el botón de aceptar siempre son tuyos.</p>
         <p data-l="en">No. Verdio only reads the offer and shows you the result. The decision and the accept button are always yours.</p></details>
@@ -479,7 +483,7 @@ footer .wrap{display:grid;gap:8px}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Verdio · verdiodriver.com · <a class="sel" href="mailto:hola@verdiodriver.com" style="color:inherit">hola@verdiodriver.com</a></span>
+    <span>© 2026 Verdio · verdiodriver.com · <a class="sel" href="mailto:hola@verdiodriver.com" style="color:inherit">hola@verdiodriver.com</a> · <a href="manual.html" style="color:inherit"><span data-l="es">Manual</span><span data-l="en">User guide</span></a></span>
     <span data-l="es">Verdio es una app independiente. No está afiliada ni respaldada por DoorDash, Uber ni Lyft.</span><span data-l="en">Verdio is an independent app. It is not affiliated with or endorsed by DoorDash, Uber or Lyft.</span>
   </div>
 </footer>

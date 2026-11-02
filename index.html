@@ -185,6 +185,8 @@ legend{font-weight:600;font-size:.92rem;margin-bottom:6px}
 .prices{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}
 .price{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:8px;background:var(--surface)}
 .price.best{border:2px solid var(--brand)}
+.price .btn.pay{margin-top:8px;justify-content:center}
+.paynote{margin-top:14px;max-width:760px}
 .price .k{font:700 .75rem var(--mono);color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
 .amt{font-family:var(--display);font-size:3rem;font-weight:850;line-height:1;font-stretch:85%}
 .amt small{font-size:1rem;font-weight:600;color:var(--muted);font-family:var(--body)}
@@ -396,19 +398,23 @@ footer .wrap{display:grid;gap:8px}
           <span class="k" data-l="es">Mensual</span><span class="k" data-l="en">Monthly</span>
           <p class="amt">$6.99<small data-l="es"> / mes</small><small data-l="en"> / month</small></p>
           <p class="small" data-l="es">Renuevas cada mes. Lo dejas cuando quieras.</p><p class="small" data-l="en">Renew every month. Stop anytime.</p>
+          <a class="btn pay" href="https://buy.stripe.com/7sY5kveU09Ab9BtdOgc3m00" target="_blank" rel="noopener"><span data-l="es">Pagar mensual · $6.99</span><span data-l="en">Pay monthly · $6.99</span></a>
         </div>
         <div class="price best">
           <span class="k" data-l="es">Anual · ahorras $23.89</span><span class="k" data-l="en">Yearly · save $23.89</span>
           <p class="amt">$59.99<small data-l="es"> / año</small><small data-l="en"> / year</small></p>
           <p class="small" data-l="es">Sale a $5 al mes. Pagas una vez y te olvidas todo el año.</p><p class="small" data-l="en">Works out to $5 a month. Pay once, done for the year.</p>
+          <a class="btn pay" href="https://buy.stripe.com/bJeeV5eU0fYzfZR5hKc3m01" target="_blank" rel="noopener"><span data-l="es">Pagar anual · $59.99</span><span data-l="en">Pay yearly · $59.99</span></a>
         </div>
       </div>
+      <p class="small paynote" data-l="es">🔒 Pago seguro con Stripe: tarjeta, Apple Pay, Cash App y más. En el pago te pedimos el <b>ID de tu teléfono</b> (en Verdio: 🔑 Activar Verdio).</p>
+      <p class="small paynote" data-l="en">🔒 Secure checkout by Stripe: card, Apple Pay, Cash App and more. At checkout we ask for your <b>phone ID</b> (in Verdio: 🔑 Activate Verdio).</p>
       <div class="head" style="margin-top:40px;margin-bottom:20px"><h3><span data-l="es">Cómo activarla</span><span data-l="en">How to activate</span></h3></div>
       <div class="steps">
         <div class="step"><h3><span data-l="es">Copia tu ID</span><span data-l="en">Copy your ID</span></h3>
           <p data-l="es">En Verdio toca <b>🔑 Activar Verdio</b>. Verás el ID de tu teléfono, por ejemplo <code>7F3A-91C2</code>.</p><p data-l="en">In Verdio tap <b>🔑 Activate Verdio</b>. You'll see your phone ID, for example <code>7F3A-91C2</code>.</p></div>
-        <div class="step"><h3><span data-l="es">Paga y mándanos tu ID</span><span data-l="en">Pay and send your ID</span></h3>
-          <p data-l="es">Escríbenos a <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activar%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a> con tu ID y el plan que quieres. Te respondemos con el enlace de pago.</p><p data-l="en">Email <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activate%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a> with your ID and the plan you want. We'll reply with the payment link.</p></div>
+        <div class="step"><h3><span data-l="es">Paga con tu ID</span><span data-l="en">Pay with your ID</span></h3>
+          <p data-l="es">Toca <b>Pagar mensual</b> o <b>Pagar anual</b> aquí arriba y escribe tu ID en el formulario de pago. Te enviamos tu código por correo, normalmente en pocas horas. ¿Dudas? <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activar%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a></p><p data-l="en">Tap <b>Pay monthly</b> or <b>Pay yearly</b> above and type your ID at checkout. We email you your code, usually within a few hours. Questions? <a class="sel" href="mailto:hola@verdiodriver.com?subject=Activate%20Verdio" style="color:inherit"><b>hola@verdiodriver.com</b></a></p></div>
         <div class="step"><h3><span data-l="es">Pega tu código</span><span data-l="en">Paste your code</span></h3>
           <p data-l="es">Te enviamos un mensaje con tu código. Lo copias, abres Verdio y tocas <b>📋 Pegar código</b> → <b>Activar</b>. No tienes que escribir nada. Solo sirve en tu teléfono.</p><p data-l="en">We send you a message with your code. Copy it, open Verdio and tap <b>📋 Paste code</b> → <b>Activate</b>. Nothing to type. It only works on your phone.</p></div>
       </div>

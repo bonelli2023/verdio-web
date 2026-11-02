@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Gracias · Verdio</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F3F5F1;--surface:#FFFFFF;--ink:#111512;--muted:#5A6660;--line:#D9DFDA;--brand:#0F8A64;--brand-ink:#FFFFFF;--gold:#9A6F14}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0D0C;--surface:#151917;--ink:#EEF2EF;--muted:#9AA6A0;--line:#26302B;--brand:#3DD9A4;--brand-ink:#06140E;--gold:#D4A64A}}
+:root[data-theme="dark"]{--bg:#0B0D0C;--surface:#151917;--ink:#EEF2EF;--muted:#9AA6A0;--line:#26302B;--brand:#3DD9A4;--brand-ink:#06140E;--gold:#D4A64A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Public Sans",system-ui,sans-serif}
+main{max-width:560px;margin:0 auto;padding:48px 16px 64px;display:grid;gap:20px}
+.logo{font:800 1.6rem "Archivo",sans-serif;color:var(--brand);text-decoration:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:12px}
+.ok{width:56px;height:56px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:1.8rem;font-weight:800}
+h1{font:800 clamp(1.6rem,5vw,2.2rem)/1.1 "Archivo",sans-serif;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+a{color:var(--brand);font-weight:600}
+hr{border:0;border-top:1px solid var(--line);margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="./">Verdio</a>
+  <section class="card" lang="es">
+    <div class="ok" aria-hidden="true">✓</div>
+    <h1>¡Gracias por elegir Verdio!</h1>
+    <p>Recibimos tu pago. Te enviaremos tu código de activación al correo de tu cuenta de PayPal, normalmente en pocas horas (máximo 24 h). Revisa también la carpeta de spam.</p>
+    <ol>
+      <li>Cuando llegue el mensaje, mantenlo presionado y toca <b>Copiar</b>.</li>
+      <li>Abre Verdio → <b>🔑 Activar Verdio</b> → <b>📋 Pegar código</b> → <b>Activar</b>.</li>
+    </ol>
+    <p class="muted">¿No escribiste el ID de tu teléfono al pagar? Mándalo a <a href="mailto:hola@verdiodriver.com?subject=ID%20de%20mi%20tel%C3%A9fono">hola@verdiodriver.com</a>.</p>
+  </section>
+  <section class="card" lang="en">
+    <h1>Thanks for choosing Verdio!</h1>
+    <p>We got your payment. We'll email your activation code to your PayPal email, usually within a few hours (24 h max). Check your spam folder too.</p>
+    <ol>
+      <li>When the message arrives, long-press it and tap <b>Copy</b>.</li>
+      <li>Open Verdio → <b>🔑 Activate Verdio</b> → <b>📋 Paste code</b> → <b>Activate</b>.</li>
+    </ol>
+    <p class="muted">Didn't type your phone ID at checkout? Send it to <a href="mailto:hola@verdiodriver.com?subject=My%20phone%20ID">hola@verdiodriver.com</a>.</p>
+  </section>
+  <p class="muted"><a href="./">← verdiodriver.com</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es" data-l="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacidad · Verdio</title>
+<meta name="description" content="Política de privacidad de Verdio: qué datos usa la app, dónde se guardan y qué sale de tu teléfono.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://verdiodriver.com/privacidad.html">
+<link rel="alternate" hreflang="es" href="https://verdiodriver.com/privacidad.html">
+<link rel="alternate" hreflang="en" href="https://verdiodriver.com/privacidad.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/privacidad.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E0F0E">
+<meta property="og:site_name" content="Verdio">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://verdiodriver.com/privacidad.html">
+<meta property="og:title" content="Privacidad · Verdio">
+<meta property="og:description" content="Qué datos usa Verdio y dónde se guardan.">
+<meta property="og:image" content="https://verdiodriver.com/media/verdio-og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#F3F5F1; --surface:#FFFFFF; --ink:#111512; --muted:#5A6660; --line:#D9DFDA;
+  --brand:#0F8A64; --brand-ink:#FFFFFF; --gold:#9A6F14; --tint:#E6F2EC;
+  --card-bg:#0E0F0E; --card-ink:#F2F5F1; --card-muted:#9AA6A0;
+  --go:#3DD9A4; --wait:#F2C14E; --stop:#F0605A; --zone:#5AA9F5; --homec:#B48CF5; --toward:#26C6DA;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0D0C; --surface:#151917; --ink:#EEF2EF; --muted:#9AA6A0; --line:#26302B;
+  --brand:#3DD9A4; --brand-ink:#06140E; --gold:#D4A64A; --tint:#12241C;
+  --card-bg:#1A1F1C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0D0C; --surface:#151917; --ink:#EEF2EF; --muted:#9AA6A0; --line:#26302B;
+  --brand:#3DD9A4; --brand-ink:#06140E; --gold:#D4A64A; --tint:#12241C;
+  --card-bg:#1A1F1C; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+html[data-l="en"] [data-l="es"], html[data-l="es"] [data-l="en"]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0;font-stretch:88%}
+h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:850;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,4.4vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:750;margin-top:26px}
+p{margin:12px 0 0}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 8px}
+/* header */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:1.4rem;color:var(--ink);text-decoration:none;font-stretch:95%}
+.dots{display:flex;flex-direction:column;gap:3px;background:var(--card-bg);padding:5px;border-radius:7px}
+.dots i{width:7px;height:7px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--stop)}.dots i:nth-child(2){background:var(--wait)}.dots i:nth-child(3){background:var(--go)}
+.tag{font:700 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+.spacer{flex:1}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 .82rem var(--mono);padding:7px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:var(--brand-ink);font:700 1rem var(--body);padding:12px 20px;border-radius:12px;text-decoration:none}
+.btn.sm{padding:8px 13px;font-size:.88rem;border-radius:10px}
+@media (max-width:560px){.bar .btn.sm,.bar .tag{display:none}}
+/* hero */
+.hero{padding-top:44px;padding-bottom:26px}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-top:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.meta span{font:600 .85rem var(--body);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+/* layout */
+.layout > div{min-width:0}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:44px;align-items:start;padding-bottom:60px}
+.toc{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;padding:4px 4px 12px 0}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:flex;gap:10px;padding:6px 10px;border-radius:9px;color:var(--muted);text-decoration:none;font-size:.93rem;line-height:1.3}
+.toc a::before{content:counter(t);font:700 .78rem var(--mono);color:var(--gold);min-width:1.4em;padding-top:2px}
+.toc a:hover{background:var(--surface);color:var(--ink)}
+.toc a.on{background:var(--tint);color:var(--ink);font-weight:600}
+.mtoc{display:none;margin:0 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.mtoc summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+.mtoc summary::after{content:"▾";color:var(--muted)}
+.mtoc[open] summary::after{content:"▴"}
+.mtoc .toc{position:static;max-height:none;padding:0 8px 10px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:0}.layout > .toc{display:none}.mtoc{display:block}}
+section.ch{padding-top:36px;margin-top:36px;border-top:1px solid var(--line)}
+section.ch:first-of-type{border-top:0;margin-top:0;padding-top:8px}
+.num{font:700 .8rem var(--mono);color:var(--gold);letter-spacing:.1em}
+ul,ol{padding-left:1.25em;margin:12px 0 0}
+li{margin:6px 0}
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;gap:10px;margin-top:16px}
+.steps > li{min-width:0;counter-increment:s;position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;margin:0}
+.steps > li::before{content:counter(s);position:absolute;left:14px;top:13px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font:800 .95rem var(--display);display:grid;place-items:center}
+.steps > li b:first-child{display:block}
+.k{display:inline-block;font:600 .9em var(--body);background:var(--card-bg);color:var(--card-ink);border-radius:8px;padding:1px 8px;white-space:normal}
+.tip,.warn{border-radius:14px;padding:14px 16px;margin-top:16px;border:1px solid var(--line);background:var(--tint)}
+.warn{background:color-mix(in srgb,var(--stop) 10%,var(--surface));border-color:color-mix(in srgb,var(--stop) 35%,var(--line))}
+.tip b:first-child,.warn b:first-child{margin-right:4px}
+.lights{display:grid;gap:10px;margin-top:16px}
+.light{display:grid;grid-template-columns:46px minmax(0,1fr);gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.light i{width:46px;height:46px;border-radius:50%;display:block}
+.light b{display:block;font-family:var(--display);font-size:1.05rem;letter-spacing:.02em}
+.light span{color:var(--muted);font-size:.96rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.box h4{margin:0 0 4px;font:750 1.02rem var(--display)}
+.box p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+/* offer card mockup */
+.cardwrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:22px;align-items:start;margin-top:18px}
+@media (max-width:700px){.cardwrap{grid-template-columns:1fr}}
+.ocard{background:#0F1512;color:#F2F5F1;border-radius:20px;padding:16px 16px 12px;border:3px solid #2E7D32;box-shadow:0 20px 40px -24px rgba(0,0,0,.6);font-size:.92rem;line-height:1.4}
+.ocard .t{display:flex;justify-content:space-between;gap:10px}
+.ocard .t b{font:850 1.5rem var(--display);color:#3DD9A4}
+.ocard .cmp{width:52px;height:52px;flex:none;border-radius:50%;border:2px solid #9AA6A0;position:relative}
+.ocard .cmp::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:20px;background:#3DD9A4;transform:translateX(-50%) rotate(35deg);transform-origin:50% 100%;border-radius:2px}
+.ocard .cmpl{font:700 .75rem var(--mono);text-align:center;color:#9AA6A0}
+.ocard .line{margin-top:4px}
+.ocard .big{font-weight:700;font-size:1.02rem}
+.ocard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:.75rem;color:#9AA6A0}
+.ocard .foot span:last-child{background:#000;color:#fff;border-radius:10px;padding:5px 10px;font-weight:700}
+.co{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--gold);color:#fff;font:800 .72rem var(--mono);margin-right:6px;vertical-align:1px}
+.legend{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.legend li{margin:0}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.steps table{font-size:.88rem}.steps th,.steps td{padding:7px 5px}.steps th{font-size:.68rem;letter-spacing:.04em}
+details.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-top:10px}
+details.q summary{cursor:pointer;padding:14px 0;font-weight:700}
+details.q > div{padding:0 0 14px}
+details.q > div > p:first-child{margin-top:0}
+.top{display:inline-block;margin-top:18px;font-size:.88rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media print{header,.toc,.mtoc,.top,.lang{display:none!important}.layout{display:block}section.ch{break-inside:avoid-page}body{font-size:12pt}}
+
+.doc{max-width:760px;padding-bottom:60px}
+.doc h2{font-size:clamp(1.35rem,3.6vw,1.7rem);margin-top:34px}
+.doc .date{color:var(--muted);font-size:.95rem;margin-top:10px}
+.sum{background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:22px}
+.sum ul{margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Verdio</a>
+    <span class="tag"><span data-l="es">Privacidad</span><span data-l="en">Privacy</span></span>
+    <span class="spacer"></span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="bES" type="button" data-set="es">ES</button>
+      <button id="bEN" type="button" data-set="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap doc" id="top">
+<div data-l="es">
+  <p class="eyebrow" style="margin-top:40px">Política de privacidad</p>
+  <h1>Tu información se queda en tu teléfono.</h1>
+  <p class="date">Vigente desde el 3 de noviembre de 2026 · App: Verdio (com.verdio.app) · Desarrollador: Verdio Driver</p>
+
+  <div class="sum"><b>En resumen</b>
+    <ul>
+      <li>Verdio no tiene cuentas de usuario, ni servidor propio, ni publicidad, ni rastreadores.</li>
+      <li>Lo que la app lee y calcula se guarda <b>solo en tu teléfono</b>.</li>
+      <li>No vendemos ni compartimos tus datos con nadie.</li>
+      <li>Solo recibimos lo que tú decides mandarnos (un mensaje, un pago, un archivo).</li>
+    </ul>
+  </div>
+
+  <h2>1. Qué datos usa la app y para qué</h2>
+  <p><b>Contenido de la pantalla (servicio de Accesibilidad).</b> Con tu permiso, Verdio lee la pantalla <b>solo de las apps de trabajo</b> que vigila (DoorDash, Uber Driver y Lyft Driver) para sacar los datos de cada oferta: pago, millas, minutos, y la zona o dirección de recogida y entrega que muestra la oferta. Con eso calcula el neto real y pone la tarjeta de color. Verdio <b>no toca botones, no acepta ni rechaza ofertas</b> y no lee otras apps, mensajes ni contraseñas. Guarda en el teléfono un historial de las últimas 100 ofertas para que lo revises.</p>
+  <p><b>Ubicación precisa, también en segundo plano.</b> Sirve para saber a qué distancia estás de tu zona y de tu casa, calcular el regreso, mostrar la brújula y contar tus millas de trabajo para el IRS, incluso con la pantalla apagada mientras manejas. Tus viajes y lecturas del odómetro se guardan en el teléfono.</p>
+  <p><b>Lo que tú escribes:</b> tu vehículo y costos, tus zonas, tu casa, tus metas, gastos, ganancias y odómetro. Todo queda en el teléfono.</p>
+  <p><b>ID del teléfono.</b> Verdio crea un código corto (ej. 9B92-A5B0) a partir del identificador de Android de tu teléfono. Sirve solo para que el código de activación funcione en ese teléfono. La app no lo envía: tú lo copias y nos lo mandas cuando compras.</p>
+
+  <h2>2. Lo que sale de tu teléfono</h2>
+  <p>Verdio no envía tus datos a ningún servidor nuestro. Solo hay dos conexiones, y van a Google:</p>
+  <ul>
+    <li><b>Búsqueda de direcciones</b> del propio Android (Geocoder de Google): para ubicar en el mapa la dirección de entrega de una oferta o un lugar que escribas, el teléfono envía ese texto o unas coordenadas al servicio de Google.</li>
+    <li><b>Hora real</b>: al abrir la app, consulta la hora en google.com para que los días de prueba y la fecha de vencimiento de tu código sean correctos. No envía datos personales.</li>
+  </ul>
+  <p>Estas conexiones siguen la <a href="https://policies.google.com/privacy" rel="noopener">política de privacidad de Google</a>.</p>
+  <p>Además, cuando <b>tú</b> tocas un botón para compartir (informe de Excel, informe del día, respaldo de ajustes o tu ID), Android abre la lista de apps y tú eliges a dónde mandarlo (WhatsApp, correo, Drive…). Verdio no lo envía solo.</p>
+
+  <h2>3. Lo que recibimos nosotros</h2>
+  <ul>
+    <li><b>Si nos escribes</b> por correo (hola@verdiodriver.com) o WhatsApp: tu mensaje, tu nombre y tu correo o número.</li>
+    <li><b>Si compras</b>: el pago lo procesan Stripe o PayPal. Nosotros recibimos tu nombre, tu correo, el plan, el monto y el ID del teléfono que escribiste, para mandarte el código. <b>Nunca vemos los datos de tu tarjeta.</b></li>
+    <li><b>Si nos mandas un archivo</b> (por ejemplo, una captura de una oferta): solo lo usamos para ayudarte o mejorar Verdio.</li>
+  </ul>
+
+  <h2>4. Lo que no hacemos</h2>
+  <ul>
+    <li>No vendemos, alquilamos ni compartimos tus datos con terceros para publicidad.</li>
+    <li>No mostramos anuncios y no usamos herramientas de analítica ni de rastreo.</li>
+    <li>No entramos a tus cuentas de DoorDash, Uber o Lyft y no pedimos tus contraseñas.</li>
+  </ul>
+
+  <h2>5. Cuánto tiempo y cómo borrar</h2>
+  <p>Los datos de la app viven en tu teléfono hasta que tú los borres: desinstala Verdio o ve a <i>Ajustes → Aplicaciones → Verdio → Almacenamiento → Borrar datos</i>. Los mensajes y registros de pago los guardamos el tiempo necesario para atenderte y por obligaciones contables e impuestos. Para pedir que borremos lo que tengamos tuyo, escribe a <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a>.</p>
+
+  <h2>6. Seguridad</h2>
+  <p>Los datos se guardan en el almacenamiento privado de la app, al que otras apps no pueden entrar. El código de activación se comprueba dentro del teléfono, sin internet.</p>
+
+  <h2>7. Menores</h2>
+  <p>Verdio es para choferes y repartidores adultos. No está dirigida a menores de 18 años y no recogemos a sabiendas datos de menores.</p>
+
+  <h2>8. Cambios</h2>
+  <p>Si cambiamos esta política, publicaremos la nueva versión en esta página con su fecha.</p>
+
+  <h2>9. Contacto</h2>
+  <p>Verdio Driver · Orlando, Florida, EE. UU. · <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a></p>
+</div>
+
+<div data-l="en">
+  <p class="eyebrow" style="margin-top:40px">Privacy policy</p>
+  <h1>Your information stays on your phone.</h1>
+  <p class="date">Effective November 3, 2026 · App: Verdio (com.verdio.app) · Developer: Verdio Driver</p>
+
+  <div class="sum"><b>In short</b>
+    <ul>
+      <li>Verdio has no user accounts, no server of its own, no ads and no trackers.</li>
+      <li>What the app reads and calculates is stored <b>only on your phone</b>.</li>
+      <li>We don't sell or share your data with anyone.</li>
+      <li>We only receive what you choose to send us (a message, a payment, a file).</li>
+    </ul>
+  </div>
+
+  <h2>1. What data the app uses and why</h2>
+  <p><b>Screen content (Accessibility service).</b> With your permission, Verdio reads the screen <b>only of the work apps</b> it watches (DoorDash, Uber Driver and Lyft Driver) to get each offer's details: pay, miles, minutes, and the pickup and drop-off area or address shown in the offer. It uses them to work out the real net and show the color card. Verdio <b>never taps buttons, never accepts or declines offers</b>, and doesn't read other apps, messages or passwords. It keeps a history of your last 100 offers on the phone for you to review.</p>
+  <p><b>Precise location, including in the background.</b> Used to know how far you are from your zone and home, work out the drive back, show the compass and count your work miles for the IRS, even with the screen off while you drive. Your trips and odometer readings are stored on the phone.</p>
+  <p><b>What you type:</b> your vehicle and costs, zones, home, goals, expenses, earnings and odometer. All of it stays on the phone.</p>
+  <p><b>Phone ID.</b> Verdio creates a short code (e.g. 9B92-A5B0) from your phone's Android identifier. It's only used so your activation code works on that phone. The app doesn't send it: you copy it and send it to us when you buy.</p>
+
+  <h2>2. What leaves your phone</h2>
+  <p>Verdio doesn't send your data to any server of ours. There are only two connections, both to Google:</p>
+  <ul>
+    <li><b>Address lookup</b> built into Android (Google's Geocoder): to place an offer's drop-off address or a place you type on the map, the phone sends that text or a set of coordinates to Google's service.</li>
+    <li><b>Real time</b>: when you open the app, it checks the time at google.com so your trial days and your code's expiry date are correct. No personal data is sent.</li>
+  </ul>
+  <p>These connections follow <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
+  <p>Also, when <b>you</b> tap a share button (Excel report, today's report, settings backup or your ID), Android opens the app list and you choose where to send it (WhatsApp, email, Drive…). Verdio never sends it by itself.</p>
+
+  <h2>3. What we receive</h2>
+  <ul>
+    <li><b>If you write to us</b> by email (hola@verdiodriver.com) or WhatsApp: your message, name and email or number.</li>
+    <li><b>If you buy</b>: payment is handled by Stripe or PayPal. We receive your name, email, plan, amount and the phone ID you typed, to send you the code. <b>We never see your card details.</b></li>
+    <li><b>If you send us a file</b> (for example, a screenshot of an offer): we only use it to help you or improve Verdio.</li>
+  </ul>
+
+  <h2>4. What we don't do</h2>
+  <ul>
+    <li>We don't sell, rent or share your data with third parties for advertising.</li>
+    <li>We don't show ads and don't use analytics or tracking tools.</li>
+    <li>We don't log into your DoorDash, Uber or Lyft accounts and never ask for your passwords.</li>
+  </ul>
+
+  <h2>5. Retention and deletion</h2>
+  <p>App data lives on your phone until you delete it: uninstall Verdio or go to <i>Settings → Apps → Verdio → Storage → Clear data</i>. We keep messages and payment records as long as needed to help you and for accounting and tax obligations. To ask us to delete what we have about you, write to <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a>.</p>
+
+  <h2>6. Security</h2>
+  <p>Data is stored in the app's private storage, which other apps can't access. The activation code is checked on the phone, without internet.</p>
+
+  <h2>7. Children</h2>
+  <p>Verdio is for adult delivery and rideshare drivers. It is not directed to anyone under 18 and we don't knowingly collect data from minors.</p>
+
+  <h2>8. Changes</h2>
+  <p>If we change this policy, we'll post the new version on this page with its date.</p>
+
+  <h2>9. Contact</h2>
+  <p>Verdio Driver · Orlando, Florida, USA · <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a></p>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Verdio · <a href="./" style="color:inherit">verdiodriver.com</a> · <a href="manual.html" style="color:inherit"><span data-l="es">Manual</span><span data-l="en">User guide</span></a></span>
+    <span data-l="es">Verdio es una app independiente. No está afiliada ni respaldada por DoorDash, Uber ni Lyft.</span><span data-l="en">Verdio is an independent app. It is not affiliated with or endorsed by DoorDash, Uber or Lyft.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function setLang(l){
+    root.setAttribute('data-l',l); root.lang=l;
+    document.getElementById('bES').setAttribute('aria-pressed',l==='es');
+    document.getElementById('bEN').setAttribute('aria-pressed',l==='en');
+    document.title = l==='en' ? 'Privacy · Verdio' : 'Privacidad · Verdio';
+    try{localStorage.setItem('verdio-lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('verdio-lang')}catch(e){}
+  var qp=null; try{qp=new URLSearchParams(location.search).get('lang')}catch(e){}
+  var start=(qp==='en'||qp==='es')?qp:saved||((navigator.language||'es').toLowerCase().indexOf('en')===0?'en':'es');
+  document.querySelectorAll('[data-set]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+  setLang(start);
+})();
+</script>
+</body>
+</html>

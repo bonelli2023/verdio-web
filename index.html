@@ -91,6 +91,11 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .hero .lead{font-size:1.2rem;color:var(--muted);margin-top:20px;max-width:34ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
 .btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--brand)}
+.btn.mbig{display:flex;width:100%;max-width:640px;justify-content:flex-start;gap:16px;padding:18px 20px;border-radius:16px;margin:0 0 22px;text-align:left;font-size:1.15rem}
+.btn.mbig .mi{font-size:2rem;line-height:1}
+.btn.mbig b{display:block;font:800 1.3rem var(--display);font-stretch:92%}
+.btn.mbig small{display:block;font:600 .92rem var(--body);opacity:.85;margin-top:2px}
+.btn.mbig .ar{margin-left:auto;font-size:1.5rem}
 .apps{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .chip{font:600 .8rem var(--mono);border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--muted);background:var(--surface)}
 .chip.soon{border-style:dashed}
@@ -443,7 +448,7 @@ footer .wrap{display:grid;gap:8px}
   <section>
     <div class="wrap">
       <div class="head"><p class="eyebrow" data-l="es">Preguntas</p><p class="eyebrow" data-l="en">Questions</p></div>
-      <p class="mlink" style="margin:0 0 14px"><a href="manual.html"><span data-l="es">📖 ¿Cómo se usa? Lee el manual completo paso a paso →</span><span data-l="en">📖 How does it work? Read the full step-by-step guide →</span></a></p>
+      <a class="btn mbig" href="manual.html"><span class="mi" aria-hidden="true">📖</span><span><span data-l="es"><b>Manual de Verdio</b><small>Cómo se usa, paso a paso · toca aquí</small></span><span data-l="en"><b>Verdio user guide</b><small>How to use it, step by step · tap here</small></span></span><span class="ar" aria-hidden="true">→</span></a>
       <details><summary><span data-l="es">¿Verdio acepta ofertas por mí?</span><span data-l="en">Does Verdio accept offers for me?</span></summary>
         <p data-l="es">No. Verdio solo lee la oferta y te muestra el resultado. La decisión y el botón de aceptar siempre son tuyos.</p>
         <p data-l="en">No. Verdio only reads the offer and shows you the result. The decision and the accept button are always yours.</p></details>

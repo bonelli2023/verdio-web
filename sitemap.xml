@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://verdiodriver.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://verdiodriver.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://verdiodriver.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/"/>
@@ -16,14 +16,14 @@
   </url>
   <url>
     <loc>https://verdiodriver.com/?lang=en</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://verdiodriver.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://verdiodriver.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/"/>
   </url>
   <url>
     <loc>https://verdiodriver.com/manual.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://verdiodriver.com/manual.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://verdiodriver.com/manual.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://verdiodriver.com/manual.html"/>

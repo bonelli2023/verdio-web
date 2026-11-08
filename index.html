@@ -89,6 +89,11 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:64px 56px}
 .hero > div{min-width:0}
 .hero .lead{font-size:1.2rem;color:var(--muted);margin-top:20px;max-width:34ch}
+.andro{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:6px 12px;border-radius:999px;border:1px solid var(--brand);color:var(--brand);font:700 .9rem var(--body)}
+.ios-note{display:none;margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,transparent)}
+.ios-note p{margin:0 0 10px}
+html.ios .ios-note{display:block}
+html.ios .only-android{display:none!important}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
 .btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--brand)}
 .btn.mbig{display:flex;width:100%;max-width:640px;justify-content:flex-start;gap:16px;padding:18px 20px;border-radius:16px;margin:0 0 22px;text-align:left;font-size:1.15rem}
@@ -210,6 +215,7 @@ footer{padding-block:36px;color:var(--muted);font-size:.85rem;border-top:1px sol
 footer .wrap{display:grid;gap:8px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<script>try{var u=navigator.userAgent;if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))document.documentElement.classList.add('ios')}catch(e){}</script>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Verdio", "alternateName": "Verdio Driver", "url": "https://verdiodriver.com/", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Gig driver offer calculator", "operatingSystem": "Android", "inLanguage": ["es", "en"], "image": "https://verdiodriver.com/media/verdio-og.jpg", "description": "Lee las ofertas de DoorDash, Uber Eats, UberX y Lyft y muestra en un segundo si valen la pena: neto real, dólares por milla y por hora, contando el regreso. Semáforo verde, amarillo o rojo, brújula, millas y gastos para los impuestos.", "featureList": ["Semáforo de ofertas", "Neto real contando el regreso", "Precio mínimo para que valga", "Modo regreso y modo casa", "Contador de millas", "Gastos, ganancias e informe de impuestos"], "offers": [{"@type": "Offer", "name": "Prueba gratis 14 días", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Mensual", "price": "6.99", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Anual", "price": "59.99", "priceCurrency": "USD"}], "publisher": {"@type": "Organization", "name": "Verdio", "url": "https://verdiodriver.com/", "email": "hola@verdiodriver.com", "logo": "https://verdiodriver.com/favicon.svg"}}, {"@context": "https://schema.org", "@type": "VideoObject", "name": "Verdio en 26 segundos", "description": "Cómo Verdio evalúa una oferta de DoorDash, Uber Eats, UberX o Lyft y muestra el neto real.", "thumbnailUrl": "https://verdiodriver.com/media/verdio-promo-poster-es.jpg", "contentUrl": "https://verdiodriver.com/media/verdio-promo-es.mp4", "uploadDate": "2026-11-02", "duration": "PT26S", "inLanguage": "es"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Verdio acepta ofertas por mí?", "acceptedAnswer": {"@type": "Answer", "text": "No. Verdio solo lee la oferta y te muestra el resultado. La decisión y el botón de aceptar siempre son tuyos."}}, {"@type": "Question", "name": "¿Necesita mi usuario o contraseña de DoorDash o Uber?", "acceptedAnswer": {"@type": "Answer", "text": "No. Verdio no entra a tus cuentas. Lee lo que aparece en tu pantalla, igual que lo harías tú."}}, {"@type": "Question", "name": "¿Funciona en iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Por ahora solo en Android."}}, {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Los primeros 14 días son gratis. Después, $6.99 al mes o $59.99 al año."}}, {"@type": "Question", "name": "¿Qué pasa cuando terminan los 14 días?", "acceptedAnswer": {"@type": "Answer", "text": "Verdio deja de leer ofertas hasta que pongas tu código. Tus ajustes, millas e historial se quedan guardados."}}, {"@type": "Question", "name": "¿Puedo usar mi código en otro teléfono?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cada código va unido a un teléfono. Si cambias de teléfono, escríbenos con tu nuevo ID y te mandamos un código nuevo por el tiempo que te quede."}}, {"@type": "Question", "name": "¿Por qué no está en la Play Store?", "acceptedAnswer": {"@type": "Answer", "text": "Por ahora la ofrecemos directo desde esta página. Así el precio es más bajo. Estamos preparando la versión para la Play Store."}}]}]</script>
 </head>
 <body>
@@ -236,8 +242,15 @@ footer .wrap{display:grid;gap:8px}
       <h1 style="margin-top:14px"><span data-l="es">¿Vale la pena esta oferta? Verdio te lo dice en un segundo.</span><span data-l="en">Is this offer worth it? Verdio tells you in one second.</span></h1>
       <p class="lead" data-l="es">Lee cada oferta en tu pantalla y te muestra cuánto ganas de verdad, contando las millas de regreso. Verde, amarillo o rojo. Tú decides con números claros.</p>
       <p class="lead" data-l="en">It reads each offer on your screen and shows what you really earn, counting the miles back. Green, yellow or red. You decide with clear numbers.</p>
+      <div class="andro"><span aria-hidden="true">🤖</span><span data-l="es">Solo para Android</span><span data-l="en">Android only</span></div>
+      <div class="ios-note">
+        <p data-l="es"><b>📱 Estás en un iPhone.</b> Verdio por ahora es solo para Android, porque Apple no deja que una app lea la pantalla de otra. ¿Quieres que te avisemos cuando haya algo para iPhone?</p>
+        <p data-l="en"><b>📱 You're on an iPhone.</b> Verdio is Android-only for now, because Apple doesn't let one app read another app's screen. Want us to let you know when there's something for iPhone?</p>
+        <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20Av%C3%ADsenme%20cuando%20Verdio%20tenga%20algo%20para%20iPhone." target="_blank" rel="noopener">💬 Avísame por WhatsApp</a>
+        <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Let%20me%20know%20when%20Verdio%20has%20something%20for%20iPhone." target="_blank" rel="noopener">💬 Notify me on WhatsApp</a>
+      </div>
       <div class="ctas">
-        <a class="btn" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a>
+        <a class="btn only-android" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a>
         <a href="#como" data-l="es">Cómo funciona</a><a href="#como" data-l="en">How it works</a>
         <a class="btn ghost" href="manual.html"><span data-l="es">📖 Manual de uso</span><span data-l="en">📖 User guide</span></a>
       </div>
@@ -286,7 +299,7 @@ footer .wrap{display:grid;gap:8px}
         </ol>
         <p class="small" data-l="en">Example numbers.</p>
         <p class="small" data-l="es">Números de ejemplo.</p>
-        <div><a class="btn" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a></div>
+        <div><a class="btn only-android" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a></div>
       </div>
     </div>
   </section>
@@ -379,7 +392,13 @@ footer .wrap{display:grid;gap:8px}
         <h2><span data-l="es">Pruébala 14 días gratis.</span><span data-l="en">Try it free for 14 days.</span></h2>
         <p data-l="es">Sin tarjeta y sin registrarte. Si no te sirve, la borras y listo.</p>
         <p data-l="en">No card and no sign-up. If it's not for you, just delete it.</p>
-        <div><a class="btn" id="dl" data-goatcounter-click="descarga-apk" data-goatcounter-title="Descargar Verdio" href="https://github.com/bonelli2023/verdio-web/releases/latest/download/Verdio.apk"><span data-l="es">⬇ Descargar Verdio para Android</span><span data-l="en">⬇ Download Verdio for Android</span></a></div>
+        <div class="ios-note" style="margin-top:0">
+          <p data-l="es"><b>📱 Desde iPhone no se puede instalar.</b> Abre esta página en un teléfono Android, o déjanos tu WhatsApp para avisarte.</p>
+          <p data-l="en"><b>📱 It can't be installed on iPhone.</b> Open this page on an Android phone, or leave us your WhatsApp and we'll let you know.</p>
+          <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20Av%C3%ADsenme%20cuando%20Verdio%20tenga%20algo%20para%20iPhone." target="_blank" rel="noopener">💬 Avísame por WhatsApp</a>
+          <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Let%20me%20know%20when%20Verdio%20has%20something%20for%20iPhone." target="_blank" rel="noopener">💬 Notify me on WhatsApp</a>
+        </div>
+        <div class="only-android"><a class="btn" id="dl" data-goatcounter-click="descarga-apk" data-goatcounter-title="Descargar Verdio" href="https://github.com/bonelli2023/verdio-web/releases/latest/download/Verdio.apk"><span data-l="es">⬇ Descargar Verdio para Android</span><span data-l="en">⬇ Download Verdio for Android</span></a></div>
         <p class="small" data-l="es">Android 11 o más nuevo. Ábrelo desde el teléfono donde manejas.</p>
         <p class="small" data-l="en">Android 11 or newer. Open this page on the phone you drive with.</p>
       </div>

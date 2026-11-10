@@ -93,6 +93,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .ios-note{display:none;margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,transparent)}
 .ios-note p{margin:0 0 10px}
 html.ios .ios-note{display:block}
+.ios-btns{display:flex;flex-wrap:wrap;gap:10px}
 html.ios .only-android{display:none!important}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
 .btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--brand)}
@@ -244,10 +245,16 @@ footer .wrap{display:grid;gap:8px}
       <p class="lead" data-l="en">It reads each offer on your screen and shows what you really earn, counting the miles back. Green, yellow or red. You decide with clear numbers.</p>
       <div class="andro"><span aria-hidden="true">🤖</span><span data-l="es">Solo para Android</span><span data-l="en">Android only</span></div>
       <div class="ios-note">
-        <p data-l="es"><b>📱 Estás en un iPhone.</b> Verdio por ahora es solo para Android, porque Apple no deja que una app lea la pantalla de otra. ¿Quieres que te avisemos cuando haya algo para iPhone?</p>
-        <p data-l="en"><b>📱 You're on an iPhone.</b> Verdio is Android-only for now, because Apple doesn't let one app read another app's screen. Want us to let you know when there's something for iPhone?</p>
-        <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20Av%C3%ADsenme%20cuando%20Verdio%20tenga%20algo%20para%20iPhone." target="_blank" rel="noopener">💬 Avísame por WhatsApp</a>
-        <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Let%20me%20know%20when%20Verdio%20has%20something%20for%20iPhone." target="_blank" rel="noopener">💬 Notify me on WhatsApp</a>
+        <p data-l="es"><b>📱 Estás en un iPhone.</b> Verdio por ahora es solo para Android, porque Apple no deja que una app lea la pantalla de otra.</p>
+        <p data-l="en"><b>📱 You're on an iPhone.</b> Verdio is Android-only for now, because Apple doesn't let one app read another app's screen.</p>
+        <p data-l="es"><b>Estamos preparando Verdio Lite para iPhone</b>: calculadora rápida de ofertas con el neto real, y millas y gastos para los impuestos. <b>Los primeros 50 que se anoten tendrán 1 mes gratis.</b></p>
+        <p data-l="en"><b>We're working on Verdio Lite for iPhone</b>: a quick offer calculator with the real net, plus miles and expenses for taxes. <b>The first 50 to sign up get 1 month free.</b></p>
+        <div class="ios-btns">
+          <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20An%C3%B3tenme%20para%20Verdio%20Lite%20%28mes%20gratis%29." target="_blank" rel="noopener">💬 Anotarme por WhatsApp</a>
+          <a class="btn ghost" data-l="es" data-goatcounter-click="iphone-correo" data-goatcounter-title="iPhone: anotarme por correo" href="mailto:hola@verdiodriver.com?subject=Verdio%20Lite%20para%20iPhone&body=Hola%2C%20tengo%20iPhone.%20An%C3%B3tenme%20para%20Verdio%20Lite%20y%20el%20mes%20gratis.%0A%0AMi%20nombre%3A%0ATrabajo%20con%20%28DoorDash%2C%20Uber%2C%20Lyft%29%3A%0ACiudad%3A">✉️ Anotarme por correo</a>
+          <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Sign%20me%20up%20for%20Verdio%20Lite%20%28free%20month%29." target="_blank" rel="noopener">💬 Sign me up on WhatsApp</a>
+          <a class="btn ghost" data-l="en" data-goatcounter-click="iphone-email" data-goatcounter-title="iPhone: sign up by email" href="mailto:hola@verdiodriver.com?subject=Verdio%20Lite%20for%20iPhone&body=Hi%2C%20I%20have%20an%20iPhone.%20Sign%20me%20up%20for%20Verdio%20Lite%20and%20the%20free%20month.%0A%0AMy%20name%3A%0AI%20drive%20for%20%28DoorDash%2C%20Uber%2C%20Lyft%29%3A%0ACity%3A">✉️ Sign me up by email</a>
+        </div>
       </div>
       <div class="ctas">
         <a class="btn only-android" href="#descargar"><span data-l="es">Descárgala gratis · 14 días</span><span data-l="en">Download free · 14 days</span></a>
@@ -393,11 +400,17 @@ footer .wrap{display:grid;gap:8px}
         <p data-l="es">Sin tarjeta y sin registrarte. Si no te sirve, la borras y listo.</p>
         <p data-l="en">No card and no sign-up. If it's not for you, just delete it.</p>
         <div class="ios-note" style="margin-top:0">
-          <p data-l="es"><b>📱 Desde iPhone no se puede instalar.</b> Abre esta página en un teléfono Android, o déjanos tu WhatsApp para avisarte.</p>
-          <p data-l="en"><b>📱 It can't be installed on iPhone.</b> Open this page on an Android phone, or leave us your WhatsApp and we'll let you know.</p>
-          <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20Av%C3%ADsenme%20cuando%20Verdio%20tenga%20algo%20para%20iPhone." target="_blank" rel="noopener">💬 Avísame por WhatsApp</a>
-          <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Let%20me%20know%20when%20Verdio%20has%20something%20for%20iPhone." target="_blank" rel="noopener">💬 Notify me on WhatsApp</a>
+        <p data-l="es"><b>📱 Desde iPhone no se puede instalar.</b> Verdio por ahora es solo para Android, porque Apple no deja que una app lea la pantalla de otra.</p>
+        <p data-l="en"><b>📱 It can't be installed on iPhone.</b> Verdio is Android-only for now, because Apple doesn't let one app read another app's screen.</p>
+        <p data-l="es"><b>Estamos preparando Verdio Lite para iPhone</b>: calculadora rápida de ofertas con el neto real, y millas y gastos para los impuestos. <b>Los primeros 50 que se anoten tendrán 1 mes gratis.</b></p>
+        <p data-l="en"><b>We're working on Verdio Lite for iPhone</b>: a quick offer calculator with the real net, plus miles and expenses for taxes. <b>The first 50 to sign up get 1 month free.</b></p>
+        <div class="ios-btns">
+          <a class="btn" data-l="es" data-goatcounter-click="iphone-avisame" data-goatcounter-title="iPhone: avísame" href="https://wa.me/14079010228?text=Hola%2C%20tengo%20iPhone.%20An%C3%B3tenme%20para%20Verdio%20Lite%20%28mes%20gratis%29." target="_blank" rel="noopener">💬 Anotarme por WhatsApp</a>
+          <a class="btn ghost" data-l="es" data-goatcounter-click="iphone-correo" data-goatcounter-title="iPhone: anotarme por correo" href="mailto:hola@verdiodriver.com?subject=Verdio%20Lite%20para%20iPhone&body=Hola%2C%20tengo%20iPhone.%20An%C3%B3tenme%20para%20Verdio%20Lite%20y%20el%20mes%20gratis.%0A%0AMi%20nombre%3A%0ATrabajo%20con%20%28DoorDash%2C%20Uber%2C%20Lyft%29%3A%0ACiudad%3A">✉️ Anotarme por correo</a>
+          <a class="btn" data-l="en" data-goatcounter-click="iphone-notify" data-goatcounter-title="iPhone: notify me" href="https://wa.me/14079010228?text=Hi%2C%20I%20have%20an%20iPhone.%20Sign%20me%20up%20for%20Verdio%20Lite%20%28free%20month%29." target="_blank" rel="noopener">💬 Sign me up on WhatsApp</a>
+          <a class="btn ghost" data-l="en" data-goatcounter-click="iphone-email" data-goatcounter-title="iPhone: sign up by email" href="mailto:hola@verdiodriver.com?subject=Verdio%20Lite%20for%20iPhone&body=Hi%2C%20I%20have%20an%20iPhone.%20Sign%20me%20up%20for%20Verdio%20Lite%20and%20the%20free%20month.%0A%0AMy%20name%3A%0AI%20drive%20for%20%28DoorDash%2C%20Uber%2C%20Lyft%29%3A%0ACity%3A">✉️ Sign me up by email</a>
         </div>
+      </div>
         <div class="only-android"><a class="btn" id="dl" data-goatcounter-click="descarga-apk" data-goatcounter-title="Descargar Verdio" href="https://github.com/bonelli2023/verdio-web/releases/latest/download/Verdio.apk"><span data-l="es">⬇ Descargar Verdio para Android</span><span data-l="en">⬇ Download Verdio for Android</span></a></div>
         <p class="small" data-l="es">Android 11 o más nuevo. Ábrelo desde el teléfono donde manejas.</p>
         <p class="small" data-l="en">Android 11 or newer. Open this page on the phone you drive with.</p>
@@ -475,7 +488,7 @@ footer .wrap{display:grid;gap:8px}
         <p data-l="es">No. Verdio no entra a tus cuentas. Lee lo que aparece en tu pantalla, igual que lo harías tú.</p>
         <p data-l="en">No. Verdio never logs into your accounts. It reads what appears on your screen, the same way you would.</p></details>
       <details><summary><span data-l="es">¿Funciona en iPhone?</span><span data-l="en">Does it work on iPhone?</span></summary>
-        <p data-l="es">Por ahora solo en Android.</p><p data-l="en">Android only for now.</p></details>
+        <p data-l="es">Por ahora solo en Android, porque Apple no deja que una app lea la pantalla de otra. Estamos preparando <b>Verdio Lite</b> para iPhone; si lo abres desde un iPhone, arriba te sale cómo anotarte (los primeros 50 tendrán 1 mes gratis).</p><p data-l="en">Android only for now, because Apple doesn't let one app read another app's screen. We're working on <b>Verdio Lite</b> for iPhone; open this page on an iPhone to sign up (the first 50 get 1 month free).</p></details>
       <details><summary><span data-l="es">¿Cuánto cuesta?</span><span data-l="en">How much does it cost?</span></summary>
         <p data-l="es">Los primeros 14 días son gratis. Después, $6.99 al mes o $59.99 al año.</p>
         <p data-l="en">The first 14 days are free. After that, $6.99 a month or $59.99 a year.</p></details>

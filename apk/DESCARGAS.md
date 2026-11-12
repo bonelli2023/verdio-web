@@ -17,3 +17,6 @@ GitHub cuenta las descargas de cada versión y el contador vuelve a 0 al subir o
 | 1.15.55 (otra vez) | 10 nov 2026 (7:50 am – 9:10 pm) | 1 |
 
 **10 nov 2026, 9:10 pm:** la web pasa a la **1.15.62** después de un turno de Bonelli con ella ("parece estable").
+| 1.15.62 | 10 nov 2026 (9:10 pm) – 12 nov 2026 (3:15 pm) | 0 |
+
+**12 nov 2026, 3:15 pm:** la web pasa a la **1.15.66** después de un turno de Bonelli sin contratiempos.

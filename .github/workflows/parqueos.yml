@@ -1,0 +1,46 @@
+name: Parqueos (datos de OpenStreetMap)
+# 🅿️ Baja una vez por semana TODOS los parqueos de la zona de Orlando desde OpenStreetMap y los deja en
+# Releases → "parqueos" (fl-orlando.csv.gz). Verdio descarga ese archivo: no depende de que los servidores
+# de OpenStreetMap respondan en el momento, responde al instante y no manda la ubicación del chofer a nadie.
+on:
+  schedule:
+    - cron: "17 7 * * 1"      # lunes 3:17 am (Orlando)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bajar parqueos de OpenStreetMap
+        run: |
+          # Zona: Orlando, Kissimmee, Winter Park, Sanford sur, Lake Nona (sur, oeste, norte, este)
+          BBOX="28.15,-81.85,28.90,-80.95"
+          Q='[out:csv(::type,::id,::lat,::lon,name,fee,access,parking,maxstay,operator;true;"|")][timeout:240][bbox:'"$BBOX"'];nwr["amenity"="parking"];out center;'
+          ok=0
+          for try in 1 2 3; do
+            for s in https://overpass-api.de/api/interpreter https://overpass.kumi.systems/api/interpreter https://overpass.private.coffee/api/interpreter https://maps.mail.ru/osm/tools/overpass/api/interpreter; do
+              echo "== intento $try: $s"
+              code=$(curl -sS -m 300 -o park.csv -w "%{http_code}" -X POST "$s" \
+                -H "User-Agent: Verdio/2.2 (parking data job; +https://verdiodriver.com; verdiodriver@gmail.com)" \
+                -H "Referer: https://verdiodriver.com/" \
+                --data-urlencode "data=$Q" || echo 000)
+              lines=$(wc -l < park.csv || echo 0)
+              head -c 200 park.csv; echo; echo "HTTP $code · $lines líneas"
+              if [ "$code" = "200" ] && head -1 park.csv | grep -q "lat" && [ "$lines" -gt 500 ]; then ok=1; break 2; fi
+              sleep 20
+            done
+            sleep 60
+          done
+          [ "$ok" = "1" ] || { echo "Ningún servidor respondió bien"; exit 1; }
+          gzip -9 -c park.csv > fl-orlando.csv.gz
+          ls -la park.csv fl-orlando.csv.gz
+          echo "$(date -u +%Y-%m-%dT%H:%MZ) $(($(wc -l < park.csv)-1)) parqueos" > fl-orlando.txt
+          cat fl-orlando.txt
+      - name: Publicar en Releases → parqueos
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release view parqueos >/dev/null 2>&1 || gh release create parqueos --title "Parqueos (OpenStreetMap)" --notes "Datos de parqueos para Verdio. © OpenStreetMap contributors (ODbL). Se actualiza cada lunes."
+          gh release upload parqueos fl-orlando.csv.gz fl-orlando.txt --clobber

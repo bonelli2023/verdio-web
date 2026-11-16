@@ -1,0 +1,53 @@
+name: Parqueos por cuadros (EE. UU., México, Puerto Rico)
+# 🅿️ Una vez por semana: baja de Geofabrik la copia de OpenStreetMap de EE. UU., México y Puerto Rico,
+# saca SOLO los parqueos y los corta en cuadros de 0.5° (~55 km). Los publica en la rama "parqueos-datos"
+# (se reemplaza entera cada semana, no crece). Verdio baja solo el cuadro donde está el chofer.
+# No usa los servidores de consulta en vivo (Overpass). Datos © OpenStreetMap contributors (ODbL).
+on:
+  schedule:
+    - cron: "41 8 * * 1"      # lunes 4:41 am (Orlando)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cuadros:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hacer espacio en el disco
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          df -h /
+      - name: Herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          pip install --quiet osmium
+          osmium --version | head -1
+      - name: Bajar y filtrar (solo parqueos)
+        run: |
+          mkdir -p /tmp/p && cd /tmp/p
+          for src in north-america/us north-america/mexico north-america/us/puerto-rico; do
+            n=$(basename $src)
+            echo "== $src"
+            curl -sSfL --retry 3 -A "Verdio parking tiles job (+https://verdiodriver.com)" -o $n.osm.pbf "https://download.geofabrik.de/${src}-latest.osm.pbf"
+            ls -la $n.osm.pbf
+            osmium tags-filter -o $n-p.osm.pbf $n.osm.pbf nwr/amenity=parking --overwrite
+            rm -f $n.osm.pbf
+            ls -la $n-p.osm.pbf
+            df -h / | tail -1
+          done
+      - name: Cortar en cuadros
+        run: |
+          python3 .github/scripts/parqueos_cuadros.py /tmp/out /tmp/p/us-p.osm.pbf /tmp/p/mexico-p.osm.pbf /tmp/p/puerto-rico-p.osm.pbf
+          du -sh /tmp/out/t; ls /tmp/out/t | wc -l
+          echo "Orlando (57_-163):"; zcat /tmp/out/t/57_-163.csv.gz | wc -l
+      - name: Publicar en la rama parqueos-datos
+        run: |
+          cd /tmp/out
+          git init -q -b parqueos-datos
+          git config user.name "verdio-bot"; git config user.email "verdiodriver@gmail.com"
+          printf "Parqueos de OpenStreetMap en cuadros de 0.5 grados para Verdio.\nDatos © OpenStreetMap contributors, licencia ODbL (openstreetmap.org/copyright).\n" > README.md
+          git add -A && git commit -qm "Parqueos $(cat t/index.txt)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" parqueos-datos
+          echo "publicado"

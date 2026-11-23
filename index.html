@@ -93,6 +93,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:col
 .ios-note{display:none;margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,transparent)}
 .ios-note p{margin:0 0 10px}
 html.ios .ios-note{display:block}
+.play-note{margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid var(--brand);background:color-mix(in srgb,var(--brand) 10%,transparent);text-align:left}
+.play-note p{margin:0 0 10px}
+.play-note .ios-btns{margin-top:4px}
 .ios-btns{display:flex;flex-wrap:wrap;gap:10px}
 html.ios .only-android{display:none!important}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
@@ -414,6 +417,16 @@ footer .wrap{display:grid;gap:8px}
         <div class="only-android"><a class="btn" id="dl" data-goatcounter-click="descarga-apk" data-goatcounter-title="Descargar Verdio" href="https://github.com/bonelli2023/verdio-web/releases/latest/download/Verdio.apk"><span data-l="es">⬇ Descargar Verdio para Android</span><span data-l="en">⬇ Download Verdio for Android</span></a></div>
         <p class="small" data-l="es">Android 11 o más nuevo. Ábrelo desde el teléfono donde manejas.</p>
         <p class="small" data-l="en">Android 11 or newer. Open this page on the phone you drive with.</p>
+        <div class="play-note only-android" id="probadores">
+        <p data-l="es"><b>🧪 Prueba Verdio desde Google Play.</b> Estamos en la prueba cerrada de Google Play y buscamos choferes con Android que la tengan instalada 14 días. Mándanos el <b>Gmail de tu Play Store</b> y te enviamos el enlace para instalarla desde la tienda.</p>
+        <p data-l="en"><b>🧪 Test Verdio from Google Play.</b> We're in Google Play's closed test and are looking for Android drivers to keep it installed for 14 days. Send us the <b>Gmail on your Play Store</b> and we'll send you the link to install it from the store.</p>
+        <div class="ios-btns">
+          <a class="btn" data-l="es" data-goatcounter-click="probador-whatsapp" data-goatcounter-title="Probador Play: WhatsApp" href="https://wa.me/14079010228?text=Hola%2C%20quiero%20probar%20Verdio%20desde%20Google%20Play.%20Mi%20Gmail%20de%20la%20Play%20Store%20es%3A%20" target="_blank" rel="noopener">💬 Quiero ser probador</a>
+          <a class="btn ghost" data-l="es" data-goatcounter-click="probador-correo" data-goatcounter-title="Probador Play: correo" href="mailto:hola@verdiodriver.com?subject=Quiero%20probar%20Verdio%20en%20Google%20Play&body=Hola%2C%20quiero%20probar%20Verdio%20desde%20Google%20Play.%0A%0AMi%20Gmail%20de%20la%20Play%20Store%3A%0AMi%20nombre%3A">✉️ Por correo</a>
+          <a class="btn" data-l="en" data-goatcounter-click="tester-whatsapp" data-goatcounter-title="Play tester: WhatsApp" href="https://wa.me/14079010228?text=Hi%2C%20I%27d%20like%20to%20test%20Verdio%20on%20Google%20Play.%20My%20Play%20Store%20Gmail%20is%3A%20" target="_blank" rel="noopener">💬 I want to be a tester</a>
+          <a class="btn ghost" data-l="en" data-goatcounter-click="tester-email" data-goatcounter-title="Play tester: email" href="mailto:hola@verdiodriver.com?subject=I%20want%20to%20test%20Verdio%20on%20Google%20Play&body=Hi%2C%20I%27d%20like%20to%20test%20Verdio%20on%20Google%20Play.%0A%0AMy%20Play%20Store%20Gmail%3A%0AMy%20name%3A">✉️ By email</a>
+        </div>
+        </div>
       </div>
       <ol class="guide">
         <li><b data-l="es">Descarga el archivo</b><b data-l="en">Download the file</b>

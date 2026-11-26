@@ -138,7 +138,7 @@ details.q > div > p:first-child{margin-top:0}
 .top{display:inline-block;margin-top:18px;font-size:.88rem;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
-@media print{header,.toc,.mtoc,.top,.lang{display:none!important}.layout{display:block}section.ch{break-inside:avoid-page}body{font-size:12pt}}
+@media print{header,.toc,.mtoc,.top,.lang{display:none!important}.layout{display:block}section.ch{break-inside:auto}body{font-size:11pt;background:#fff}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}.steps>li,.tip,.warn,.box,table,details.q{break-inside:avoid}h2,h3{break-after:avoid}details.q>div{display:block}}
 </style>
 </head>
 <body>
@@ -555,8 +555,87 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 </section>
 
 <!-- 13 -->
-<section class="ch" id="probar" data-es="Probar, mejores horas e historial" data-en="Test, best hours and history">
+<section class="ch" id="taximetro" data-es="Taxímetro (viajes propios)" data-en="Taximeter (your own rides)">
   <p class="num">13</p>
+  <h2><span data-l="es">🚕 Taxímetro para viajes propios</span><span data-l="en">🚕 Taximeter for your own rides</span></h2>
+  <div data-l="es">
+    <div class="tip"><b>🧪</b> <b>Nuevo, en pruebas (versión 2.4).</b> La descarga de esta web todavía es la versión 1.15, que no lo trae. Llega cuando la 2.4 esté lista.</div>
+    <p>Para tus <b>clientes propios</b>, fuera de Uber, Lyft y DoorDash. El cliente ve el precio subir en números grandes, tú cobras como él prefiera y Verdio lo anota en tus ganancias. Las millas cuentan para el IRS.</p>
+    <div class="warn"><b>⚠️</b> Cobrar viajes por tu cuenta necesita los <b>permisos de vehículo de alquiler</b> de tu ciudad y <b>seguro comercial</b>. El seguro personal y el de las apps normalmente no cubren estos viajes. La primera vez, Verdio pregunta: <span class="k">✅ Tengo mis permisos</span> o <span class="k">Todavía no</span>.</div>
+    <h3>Antes del primer viaje</h3>
+    <ol class="steps">
+      <li><b>Abre el taxímetro</b>En <b>Hoy</b>, toca la tarjeta <span class="k">🚕 Viaje propio (taxímetro)</span> o el botón <span class="k">🚕 Abrir taxímetro</span>.</li>
+      <li><b>🪪 Mi negocio y permisos</b>Nombre del negocio, tu nombre, teléfono para clientes, número de permiso de chofer, de permiso del vehículo y tablilla. Salen en el recibo y en la tabla de tarifas. Todo es opcional.</li>
+      <li><b>Tus tarifas</b>Hay tres: <b>Tarifa 1</b>, <b>Tarifa 2</b> y <b>Noche</b>. Se cambian con un toque. Con <span class="k">✏️ Editar</span> cambias el nombre, el arranque, las millas incluidas en el arranque, el precio por milla, el precio por minuto y el cobro mínimo.</li>
+      <li><b>⚙️ Mis datos de cobro</b>Tu Zelle (correo o teléfono), tu $Cashtag de Cash App, tu usuario de Venmo, tu PayPal.Me y tu enlace de pago de Stripe. También puedes guardar la captura de tu código QR oficial de cada app. Se guardan solo en tu teléfono.</li>
+    </ol>
+    <div class="tw"><table>
+      <tr><th>Tarifa de fábrica</th><th>Arranque</th><th>Por milla</th><th>Por min. de espera</th><th>Mínimo</th></tr>
+      <tr><td>Tarifa 1</td><td>$3.00</td><td>$1.50</td><td>$0.30</td><td>$8.00</td></tr>
+      <tr><td>Tarifa 2</td><td>$3.50</td><td>$1.75</td><td>$0.35</td><td>$10.00</td></tr>
+      <tr><td>Noche</td><td>$4.00</td><td>$2.00</td><td>$0.40</td><td>$12.00</td></tr>
+    </table></div>
+    <h3>¿Cuándo se cobran los minutos?</h3>
+    <p>De fábrica, <b>solo con el botón ⏳ Espera</b>: cuando el cliente te pide que lo esperes (una tienda, recoger al niño en la escuela). Semáforos, tráfico y accidentes <b>no se cobran</b>: manejando solo cuentan las millas. En <span class="k">✏️ Editar</span> puedes escoger en su lugar <b>"solo parado o despacio"</b> (automático, como los taxis) o <b>"todos los minutos del viaje"</b>.</p>
+    <h3>El viaje, paso a paso</h3>
+    <ol class="steps">
+      <li><b>Cotiza</b>Escribe el destino y toca <span class="k">🗺️ Cotizar con Google Maps</span>: Verdio lee la ruta de Maps y te da el precio. También puedes escribir la distancia a mano.</li>
+      <li><b>Escoge cómo cobrar</b><span class="k">💲 Precio cerrado</span>: el cliente paga lo cotizado, aunque haya tráfico. <span class="k">⏱️ Taxímetro</span>: el precio sube con las millas (y la espera).</li>
+      <li><b>Desliza para EMPEZAR ➡️</b>Desliza el círculo verde hasta el final. Así no se empieza por un toque sin querer.</li>
+      <li><b>Maneja con Google Maps</b>Toca <span class="k">🗺️ Abrir Google Maps</span>. Arriba sale la <b>franja del taxímetro</b> con el precio grande. Tócala para agrandarla y que el cliente la vea; arrástrala si tapa algo.</li>
+      <li><b>Durante el viaje</b><span class="k">⏳ Espera</span> si el cliente pide esperarlo (los números se ponen azules). <span class="k">⏸️ Pausa</span> no cuenta ni millas ni minutos. <span class="k">➕ Extras</span> suma peajes, maletas o el cargo del aeropuerto (−$1, +$1, +$5 o el monto que escribas).</li>
+      <li><b>Desliza para TERMINAR 🏁</b>En la pantalla de Verdio, o desde la franja grande con <span class="k">🏁 Terminar</span>.</li>
+      <li><b>Cobra</b>Escribe la propina, si la hubo. Con los botones azules le enseñas al cliente cómo pagarte: <span class="k">💳 Acercar tarjeta</span>, Zelle, Cash App, Venmo, PayPal o Stripe.</li>
+      <li><b>Anota y manda el recibo</b>Toca cómo pagó: Efectivo, Zelle, Tarjeta, Cash App, Venmo, PayPal, Stripe, ATH Móvil u Otro. Verdio lo anota como <b>Viajes propios</b> y te ofrece mandar el <b>🧾 recibo</b> por WhatsApp.</li>
+    </ol>
+    <h3>💳 Acercar la tarjeta al teléfono</h3>
+    <p>Verdio copia el total y abre tu app de cobro: <b>Stripe Dashboard</b> (Tap to Pay), <b>Stripe Terminal</b> o <b>Square</b>. Allí pegas el monto y el cliente acerca su tarjeta, Apple Pay o Google Pay. Al volver, Verdio pregunta si pasó el pago y lo anota. Necesitas tu cuenta de Stripe o Square y el NFC del teléfono encendido. Stripe y Square cobran una comisión por cada pago.</p>
+    <div class="tip"><b>💡</b> Verdio no cobra ni guarda tarjetas: el cliente te paga directo a ti. Si una tarjeta pide PIN, el cobro puede fallar mientras Verdio está encendido; en ese caso el cliente puede pagar con el enlace de Stripe o con otra tarjeta.</div>
+    <h3>📋 Tarifas para el cliente</h3>
+    <p>Muestra tus tarifas en grande, con tus permisos y tu teléfono, o mándalas por WhatsApp antes del viaje.</p>
+  </div>
+  <div data-l="en">
+    <div class="tip"><b>🧪</b> <b>New, in testing (version 2.4).</b> The download on this website is still version 1.15, which doesn't include it. It arrives when 2.4 is ready.</div>
+    <p>For your <b>own clients</b>, outside Uber, Lyft and DoorDash. The client watches the price go up in big digits, you get paid however they prefer and Verdio logs it in your earnings. The miles count for the IRS.</p>
+    <div class="warn"><b>⚠️</b> Charging for rides on your own requires your city's <b>for-hire vehicle permits</b> and <b>commercial insurance</b>. Personal and app insurance usually don't cover these rides. The first time, Verdio asks: <span class="k">✅ I have my permits</span> or <span class="k">Not yet</span>.</div>
+    <h3>Before your first ride</h3>
+    <ol class="steps">
+      <li><b>Open the meter</b>In <b>Today</b>, tap the <span class="k">🚕 Own ride (meter)</span> card or the <span class="k">🚕 Open meter</span> button.</li>
+      <li><b>🪪 My business &amp; permits</b>Business name, your name, phone for clients, driver permit number, vehicle permit number and license plate. They appear on the receipt and the rate card. All optional.</li>
+      <li><b>Your rates</b>There are three: <b>Tarifa 1</b>, <b>Tarifa 2</b> and <b>Noche</b> (night). Switch with one tap. With <span class="k">✏️ Edit</span> you change the name, base, miles included in the base, price per mile, price per minute and minimum fare.</li>
+      <li><b>⚙️ My payment info</b>Your Zelle (email or phone), Cash App $Cashtag, Venmo username, PayPal.Me and Stripe payment link. You can also save a screenshot of each app's official QR code. Stored only on your phone.</li>
+    </ol>
+    <div class="tw"><table>
+      <tr><th>Default rate</th><th>Base</th><th>Per mile</th><th>Per wait min.</th><th>Minimum</th></tr>
+      <tr><td>Tarifa 1</td><td>$3.00</td><td>$1.50</td><td>$0.30</td><td>$8.00</td></tr>
+      <tr><td>Tarifa 2</td><td>$3.50</td><td>$1.75</td><td>$0.35</td><td>$10.00</td></tr>
+      <tr><td>Noche (night)</td><td>$4.00</td><td>$2.00</td><td>$0.40</td><td>$12.00</td></tr>
+    </table></div>
+    <h3>When are minutes charged?</h3>
+    <p>By default, <b>only with the ⏳ Wait button</b>: when the client asks you to wait (a store, picking up a kid at school). Traffic lights, traffic and accidents are <b>not charged</b>: while driving only miles count. In <span class="k">✏️ Edit</span> you can choose <b>"only stopped or slow"</b> (automatic, like taxis) or <b>"every minute of the ride"</b> instead.</p>
+    <h3>The ride, step by step</h3>
+    <ol class="steps">
+      <li><b>Get a quote</b>Type the destination and tap <span class="k">🗺️ Quote with Google Maps</span>: Verdio reads the Maps route and gives you the price. You can also type the distance yourself.</li>
+      <li><b>Choose how to charge</b><span class="k">💲 Fixed price</span>: the client pays the quote, even with traffic. <span class="k">⏱️ Meter</span>: the price goes up with the miles (and the waiting).</li>
+      <li><b>Slide to START ➡️</b>Slide the green circle all the way. That way a stray tap doesn't start it.</li>
+      <li><b>Drive with Google Maps</b>Tap <span class="k">🗺️ Open Google Maps</span>. The <b>meter band</b> shows the price on top. Tap it to make it big so the client can see it; drag it if it covers something.</li>
+      <li><b>During the ride</b><span class="k">⏳ Wait</span> if the client asks you to wait (digits turn blue). <span class="k">⏸️ Pause</span> counts no miles or minutes. <span class="k">➕ Extras</span> adds tolls, luggage or airport fees (−$1, +$1, +$5 or the amount you type).</li>
+      <li><b>Slide to FINISH 🏁</b>On Verdio's screen, or from the big band with <span class="k">🏁 Finish</span>.</li>
+      <li><b>Get paid</b>Type the tip, if any. With the blue buttons you show the client how to pay you: <span class="k">💳 Tap card</span>, Zelle, Cash App, Venmo, PayPal or Stripe.</li>
+      <li><b>Record it and send the receipt</b>Tap how they paid: Cash, Zelle, Card, Cash App, Venmo, PayPal, Stripe, ATH Móvil or Other. Verdio logs it as <b>Own rides</b> and offers to send the <b>🧾 receipt</b> by WhatsApp.</li>
+    </ol>
+    <h3>💳 Tap the card on your phone</h3>
+    <p>Verdio copies the total and opens your payment app: <b>Stripe Dashboard</b> (Tap to Pay), <b>Stripe Terminal</b> or <b>Square</b>. Paste the amount there and the client taps their card, Apple Pay or Google Pay. When you come back, Verdio asks whether the payment went through and records it. You need your Stripe or Square account and your phone's NFC turned on. Stripe and Square charge a fee per payment.</p>
+    <div class="tip"><b>💡</b> Verdio doesn't charge or store cards: the client pays you directly. If a card asks for a PIN, the payment may fail while Verdio is on; then the client can pay with the Stripe link or another card.</div>
+    <h3>📋 Rates for the client</h3>
+    <p>Show your rates in big type, with your permits and phone, or send them by WhatsApp before the ride.</p>
+  </div>
+  <a class="top" href="#top"><span data-l="es">↑ Volver arriba</span><span data-l="en">↑ Back to top</span></a>
+</section>
+
+<!-- 13 -->
+<section class="ch" id="probar" data-es="Probar, mejores horas e historial" data-en="Test, best hours and history">
+  <p class="num">14</p>
   <h2><span data-l="es">Probar sin manejar, mejores horas e historial</span><span data-l="en">Test without driving, best hours and history</span></h2>
   <div class="grid2" data-l="es">
     <div class="box"><h4>7. Probar sin manejar</h4><p>Toca un ejemplo (DoorDash, Uber Eats, UberX o Lyft) o pega una oferta, y toca <b>Probar oferta</b>. Así ves cómo afectan tus números sin salir a la calle. <b>🌙 Probar como si fueran las 8 pm</b> muestra la misma oferta con el regreso de noche.</p></div>
@@ -573,7 +652,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <!-- 14 -->
 <section class="ch" id="respaldo" data-es="Respaldo y cambio de teléfono" data-en="Backup and new phone">
-  <p class="num">14</p>
+  <p class="num">15</p>
   <h2><span data-l="es">Respaldo y cambio de teléfono</span><span data-l="en">Backup and changing phones</span></h2>
   <div data-l="es">
     <p>En <b>9. Respaldo de ajustes</b>:</p>
@@ -596,7 +675,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <!-- 15 -->
 <section class="ch" id="activar" data-es="Prueba gratis y activación" data-en="Free trial and activation">
-  <p class="num">15</p>
+  <p class="num">16</p>
   <h2><span data-l="es">Prueba gratis y activación</span><span data-l="en">Free trial and activation</span></h2>
   <p data-l="es">Los primeros <b>14 días son gratis</b>. Después, <b>$6.99 al mes</b> o <b>$59.99 al año</b> (sale a $5 al mes). Cuando termina la prueba, Verdio deja de leer ofertas hasta que pongas tu código; tus ajustes, millas e historial se quedan guardados.</p>
   <p data-l="en">The first <b>14 days are free</b>. After that, <b>$6.99 a month</b> or <b>$59.99 a year</b> (about $5 a month). When the trial ends, Verdio stops reading offers until you enter your code; your settings, miles and history stay saved.</p>
@@ -619,7 +698,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <!-- 16 -->
 <section class="ch" id="problemas" data-es="Problemas comunes" data-en="Troubleshooting">
-  <p class="num">16</p>
+  <p class="num">17</p>
   <h2><span data-l="es">Problemas comunes</span><span data-l="en">Troubleshooting</span></h2>
   <div data-l="es">
     <details class="q"><summary>No me sale la tarjeta cuando llega una oferta</summary><div>
@@ -676,7 +755,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <!-- 17 -->
 <section class="ch" id="ayuda" data-es="¿Necesitas ayuda?" data-en="Need help?">
-  <p class="num">17</p>
+  <p class="num">18</p>
   <h2><span data-l="es">¿Necesitas ayuda?</span><span data-l="en">Need help?</span></h2>
   <p data-l="es">Escríbenos a <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a> o por WhatsApp desde la sección <a href="./#contacto">Contacto</a> de la web. Leemos todos los mensajes. Si una oferta salió con el color equivocado, mándanos una captura de la oferta y de la tarjeta.</p>
   <p data-l="en">Write to <a href="mailto:hola@verdiodriver.com">hola@verdiodriver.com</a> or on WhatsApp from the <a href="./#contacto">Contact</a> section of the website. We read every message. If an offer showed the wrong color, send us a screenshot of the offer and the card.</p>
